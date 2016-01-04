@@ -8,7 +8,7 @@
         <title>基於select的多路複用 | Go语言圣经</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.6">
+        <meta name="generator" content="GitBook 2.5.2">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -48,13 +48,7 @@
     <body>
         
         
-    <div class="book"
-        data-level="8.7"
-        data-chapter-title="基於select的多路複用"
-        data-filepath="ch8/ch8-07.md"
-        data-basepath=".."
-        data-revision="Sat Jan 02 2016 16:00:23 GMT+0800 (中国标准时间)"
-        data-innerlanguage="">
+    <div class="book" data-level="8.7" data-chapter-title="基於select的多路複用" data-filepath="ch8/ch8-07.md" data-basepath=".." data-revision="Mon Jan 04 2016 17:02:01 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -1265,7 +1259,7 @@
                         
                             <b>8.5.</b>
                         
-                        併行的循環
+                        併發的循環
                     </a>
             
             
@@ -2113,7 +2107,7 @@ abort := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan
 <p>time.Tick&#x51FD;&#x6578;&#x8868;&#x73FE;&#x5F97;&#x597D;&#x50CF;&#x5B83;&#x5275;&#x5EFA;&#x4E86;&#x4E00;&#x500B;&#x5728;&#x5FAA;&#x74B0;&#x4E2D;&#x8ABF;&#x7528;time.Sleep&#x7684;goroutine&#xFF0C;&#x6BCF;&#x6B21;&#x88AB;&#x559A;&#x9192;&#x6642;&#x767C;&#x9001;&#x4E00;&#x500B;&#x4E8B;&#x4EF6;&#x3002;&#x7576;countdown&#x51FD;&#x6578;&#x8FD4;&#x8FF4;&#x6642;&#xFF0C;&#x5B83;&#x6703;&#x505C;&#x6B62;&#x5F9E;tick&#x4E2D;&#x63A5;&#x6536;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;ticker&#x9019;&#x500B;goroutine&#x9084;&#x4F9D;&#x7136;&#x5B58;&#x6D3B;&#xFF0C;&#x7E7C;&#x7E8C;&#x5F92;&#x52DE;&#x5730;&#x5690;&#x8A66;&#x5F9E;channel&#x4E2D;&#x767C;&#x9001;&#x503C;&#xFF0C;&#x7136;&#x800C;&#x9019;&#x6642;&#x5019;&#x5DF2;&#x7D93;&#x6C92;&#x6709;&#x5176;&#x5B83;&#x7684;goroutine&#x6703;&#x5F9E;&#x8A72;channel&#x4E2D;&#x63A5;&#x6536;&#x503C;&#x4E86;--&#x9019;&#x88AB;&#x7A31;&#x7232;goroutine&#x6D29;&#x9732;(&#xA7;8.4.4)&#x3002;</p>
 <p>Tick&#x51FD;&#x6578;&#x633A;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x662F;&#x96BB;&#x6709;&#x7576;&#x7A0B;&#x5E8F;&#x6574;&#x500B;&#x751F;&#x547D;&#x9031;&#x671F;&#x90FD;&#x9700;&#x8981;&#x9019;&#x500B;&#x6642;&#x9593;&#x6642;&#x6211;&#x5011;&#x4F7F;&#x7528;&#x5B83;&#x624D;&#x6BD4;&#x8F03;&#x5408;&#x9069;&#x3002;&#x5426;&#x5247;&#x7684;&#x8A71;&#xFF0C;&#x6211;&#x5011;&#x61C9;&#x8A72;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x9019;&#x7A2E;&#x6A21;&#x5F0F;&#xFF1A;</p>
 <pre><code class="lang-go">ticker := time.NewTicker(<span class="hljs-number">1</span> * time.Second)
-&lt;-ticker.C <span class="hljs-comment">// receive from the ticker&apos;s channel</span>
+&lt;-ticker.C    <span class="hljs-comment">// receive from the ticker&apos;s channel</span>
 ticker.Stop() <span class="hljs-comment">// cause the ticker&apos;s goroutine to terminate</span>
 </code></pre>
 <p>&#x6709;&#x6642;&#x5019;&#x6211;&#x5011;&#x5E0C;&#x671B;&#x80FD;&#x5920;&#x5F9E;channel&#x4E2D;&#x767C;&#x9001;&#x6216;&#x8005;&#x63A5;&#x6536;&#x503C;&#xFF0C;&#x4F75;&#x907F;&#x514D;&#x56E0;&#x7232;&#x767C;&#x9001;&#x6216;&#x8005;&#x63A5;&#x6536;&#x5C0E;&#x81F4;&#x7684;&#x963B;&#x585E;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x7576;channel&#x6C92;&#x6709;&#x6E96;&#x5099;&#x597D;&#x5BEB;&#x6216;&#x8005;&#x8B80;&#x6642;&#x3002;select&#x8A9E;&#x53E5;&#x5C31;&#x53EF;&#x4EE5;&#x5BE6;&#x73FE;&#x9019;&#x6A23;&#x7684;&#x529F;&#x80FD;&#x3002;select&#x6703;&#x6709;&#x4E00;&#x500B;default&#x4F86;&#x8A2D;&#x7F6E;&#x7576;&#x5176;&#x5B83;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x4E0D;&#x80FD;&#x5920;&#x99AC;&#x4E0A;&#x88AB;&#x8655;&#x7406;&#x6642;&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#x57F7;&#x884C;&#x54EA;&#x4E9B;&#x908F;&#x8F2F;&#x3002;</p>

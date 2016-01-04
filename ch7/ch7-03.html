@@ -8,7 +8,7 @@
         <title>實現接口的條件 | Go语言圣经</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.6">
+        <meta name="generator" content="GitBook 2.5.2">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -48,13 +48,7 @@
     <body>
         
         
-    <div class="book"
-        data-level="7.3"
-        data-chapter-title="實現接口的條件"
-        data-filepath="ch7/ch7-03.md"
-        data-basepath=".."
-        data-revision="Sat Jan 02 2016 16:00:23 GMT+0800 (中国标准时间)"
-        data-innerlanguage="">
+    <div class="book" data-level="7.3" data-chapter-title="實現接口的條件" data-filepath="ch7/ch7-03.md" data-basepath=".." data-revision="Mon Jan 04 2016 17:02:01 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -1265,7 +1259,7 @@
                         
                             <b>8.5.</b>
                         
-                        併行的循環
+                        併發的循環
                     </a>
             
             
@@ -2030,7 +2024,109 @@
                     <section class="normal" id="section-">
                     
                         <h2 id="73-&#x5BE6;&#x73FE;&#x63A5;&#x53E3;&#x7684;&#x689D;&#x4EF6;">7.3. &#x5BE6;&#x73FE;&#x63A5;&#x53E3;&#x7684;&#x689D;&#x4EF6;</h2>
-<p>TODO</p>
+<p>&#x4E00;&#x500B;&#x985E;&#x578B;&#x5982;&#x679C;&#x64C1;&#x6709;&#x4E00;&#x500B;&#x63A5;&#x53E3;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x9EBD;&#x9019;&#x500B;&#x985E;&#x578B;&#x5C31;&#x5BE6;&#x73FE;&#x4E86;&#x9019;&#x500B;&#x63A5;&#x53E3;&#x3002;&#x4F8B;&#x5982;&#xFF0C;<em>os.File&#x985E;&#x578B;&#x5BE6;&#x73FE;&#x4E86;io.Reader&#xFF0C;Writer&#xFF0C;Closer&#xFF0C;&#x548C;ReadWriter&#x63A5;&#x53E3;&#x3002;</em>bytes.Buffer&#x5BE6;&#x73FE;&#x4E86;Reader&#xFF0C;Writer&#xFF0C;&#x548C;ReadWriter&#x9019;&#x4E9B;&#x63A5;&#x53E3;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x6C92;&#x6709;&#x5BE6;&#x73FE;Closer&#x63A5;&#x53E3;&#x56E0;&#x7232;&#x5B83;&#x4E0D;&#x5177;&#x6709;Close&#x65B9;&#x6CD5;&#x3002;Go&#x7684;&#x7A0B;&#x5E8F;&#x54E1;&#x7D93;&#x5E38;&#x6703;&#x7C21;&#x8981;&#x7684;&#x628A;&#x4E00;&#x500B;&#x5177;&#x9AD4;&#x7684;&#x985E;&#x578B;&#x63CF;&#x8FF0;&#x6210;&#x4E00;&#x500B;&#x7279;&#x5B9A;&#x7684;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x3002;&#x8209;&#x500B;&#x4F8B;&#x5B50;&#xFF0C;<em>bytes.Buffer&#x662F;io.Writer&#xFF1B;</em>os.Files&#x662F;io.ReadWriter&#x3002;</p>
+<p>&#x63A5;&#x53E3;&#x6307;&#x5B9A;&#x7684;&#x898F;&#x5247;&#x975E;&#x5E38;&#x7C21;&#x55AE;&#xFF1A;&#x8868;&#x9054;&#x4E00;&#x500B;&#x985E;&#x578B;&#x5C6C;&#x65BC;&#x67D0;&#x500B;&#x63A5;&#x53E3;&#x96BB;&#x8981;&#x9019;&#x500B;&#x985E;&#x578B;&#x5BE6;&#x73FE;&#x9019;&#x500B;&#x63A5;&#x53E3;&#x3002;&#x6240;&#x4EE5;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">var</span> w io.Writer
+w = os.Stdout           <span class="hljs-comment">// OK: *os.File has Write method</span>
+w = <span class="hljs-built_in">new</span>(bytes.Buffer)   <span class="hljs-comment">// OK: *bytes.Buffer has Write method</span>
+w = time.Second         <span class="hljs-comment">// compile error: time.Duration lacks Write method</span>
+
+<span class="hljs-keyword">var</span> rwc io.ReadWriteCloser
+rwc = os.Stdout         <span class="hljs-comment">// OK: *os.File has Read, Write, Close methods</span>
+rwc = <span class="hljs-built_in">new</span>(bytes.Buffer) <span class="hljs-comment">// compile error: *bytes.Buffer lacks Close method</span>
+</code></pre>
+<p>&#x9019;&#x500B;&#x898F;&#x5247;&#x751A;&#x81F3;&#x9069;&#x7528;&#x65BC;&#x7B49;&#x5F0F;&#x53F3;&#x908A;&#x672C;&#x8EAB;&#x4E5F;&#x662F;&#x4E00;&#x500B;&#x63A5;&#x53E3;&#x985E;&#x578B;</p>
+<pre><code class="lang-go">w = rwc                 <span class="hljs-comment">// OK: io.ReadWriteCloser has Write method</span>
+rwc = w                 <span class="hljs-comment">// compile error: io.Writer lacks Close method</span>
+</code></pre>
+<p>&#x56E0;&#x7232;ReadWriter&#x548C;ReadWriteCloser&#x5305;&#x542B;&#x6240;&#x6709;Writer&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x4EFB;&#x4F55;&#x5BE6;&#x73FE;&#x4E86;ReadWriter&#x548C;ReadWriteCloser&#x7684;&#x985E;&#x578B;&#x5FC5;&#x5B9A;&#x4E5F;&#x5BE6;&#x73FE;&#x4E86;Writer&#x63A5;&#x53E3;</p>
+<p>&#x5728;&#x9032;&#x4E00;&#x6B65;&#x5B78;&#x7FD2;&#x524D;&#xFF0C;&#x5FC5;&#x9B1A;&#x5148;&#x89E3;&#x91CB;&#x8868;&#x793A;&#x4E00;&#x500B;&#x985E;&#x578B;&#x6301;&#x6709;&#x4E00;&#x500B;&#x65B9;&#x6CD5;&#x7576;&#x4E2D;&#x7684;&#x7D30;&#x7BC0;&#x3002;&#x8FF4;&#x60F3;&#x5728;6.2&#x7AE0;&#x4E2D;&#xFF0C;&#x5C0D;&#x65BC;&#x6BCF;&#x4E00;&#x500B;&#x547D;&#x540D;&#x904E;&#x7684;&#x5177;&#x9AD4;&#x985E;&#x578B;T&#xFF1B;&#x5B83;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#x7684;&#x63A5;&#x6536;&#x8005;&#x662F;&#x985E;&#x578B;T&#x672C;&#x8EAB;&#x7136;&#x800C;&#x53E6;&#x4E00;&#x4E9B;&#x5247;&#x662F;&#x4E00;&#x500B;<em>T&#x7684;&#x6307;&#x91DD;&#x3002;&#x9084;&#x8A18;&#x5F97;&#x5728;T&#x985E;&#x578B;&#x7684;&#x53C3;&#x6578;&#x4E0A;&#x8ABF;&#x7528;&#x4E00;&#x500B;</em>T&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5408;&#x6CD5;&#x7684;&#xFF0C;&#x96BB;&#x8981;&#x9019;&#x500B;&#x53C3;&#x6578;&#x662F;&#x4E00;&#x500B;&#x8B8A;&#x91CF;&#xFF1B;&#x7DE8;&#x8B6F;&#x5668;&#x96B1;&#x5F0F;&#x7684;&#x7372;&#x53D6;&#x4E86;&#x5B83;&#x7684;&#x5730;&#x5740;&#x3002;&#x4F46;&#x9019;&#x50C5;&#x50C5;&#x662F;&#x4E00;&#x500B;&#x8A9E;&#x6CD5;&#x91A3;&#xFF1A;T&#x985E;&#x578B;&#x7684;&#x503C;&#x4E0D;&#x64C1;&#x6709;&#x6240;&#x6709;*T&#x6307;&#x91DD;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x9019;&#x6A23;&#x5B83;&#x5C31;&#x53EF;&#x80FD;&#x96BB;&#x5BE6;&#x73FE;&#x66F4;&#x5C11;&#x7684;&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x8209;&#x500B;&#x4F8B;&#x5B50;&#x53EF;&#x80FD;&#x6703;&#x66F4;&#x6E05;&#x6670;&#x4E00;&#x9EDE;&#x3002;&#x5728;&#x7B2C;6.5&#x7AE0;&#x4E2D;&#xFF0C;IntSet&#x985E;&#x578B;&#x7684;String&#x65B9;&#x6CD5;&#x7684;&#x63A5;&#x6536;&#x8005;&#x662F;&#x4E00;&#x500B;&#x6307;&#x91DD;&#x985E;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5011;&#x4E0D;&#x80FD;&#x5728;&#x4E00;&#x500B;&#x4E0D;&#x80FD;&#x5C0B;&#x5740;&#x7684;IntSet&#x503C;&#x4E0A;&#x8ABF;&#x7528;&#x9019;&#x500B;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> IntSet <span class="hljs-keyword">struct</span> { <span class="hljs-comment">/* ... */</span> }
+<span class="hljs-keyword">func</span> (*IntSet) String() <span class="hljs-typename">string</span>
+<span class="hljs-keyword">var</span> _ = IntSet{}.String() <span class="hljs-comment">// compile error: String requires *IntSet receiver</span>
+</code></pre>
+<p>&#x4F46;&#x662F;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x500B;IntSet&#x503C;&#x4E0A;&#x8ABF;&#x7528;&#x9019;&#x500B;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">var</span> s IntSet
+<span class="hljs-keyword">var</span> _ = s.String() <span class="hljs-comment">// OK: s is a variable and &amp;s has a String method</span>
+</code></pre>
+<p>&#x7136;&#x800C;&#xFF0C;&#x7531;&#x65BC;&#x96BB;&#x6709;<em>IntSet&#x985E;&#x578B;&#x6709;String&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x6709;&#x4E5F;&#x96BB;&#x6709;</em>IntSet&#x985E;&#x578B;&#x5BE6;&#x73FE;&#x4E86;fmt.Stringer&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">var</span> _ fmt.Stringer = &amp;s <span class="hljs-comment">// OK</span>
+<span class="hljs-keyword">var</span> _ fmt.Stringer = s  <span class="hljs-comment">// compile error: IntSet lacks String method</span>
+</code></pre>
+<p>12.8&#x7AE0;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x500B;&#x6253;&#x5370;&#x51FA;&#x4EFB;&#x610F;&#x503C;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x7136;&#x5F8C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;godoc -analysis=type tool(&#xA7;10.7.4)&#x5C55;&#x793A;&#x6BCF;&#x500B;&#x985E;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x5177;&#x9AD4;&#x985E;&#x578B;&#x548C;&#x63A5;&#x53E3;&#x4E4B;&#x9593;&#x7684;&#x95DC;&#x7E6B;</p>
+<p>&#x5C31;&#x50CF;&#x4FE1;&#x5C01;&#x5C01;&#x88DD;&#x548C;&#x96B1;&#x85CF;&#x4FE1;&#x4EF6;&#x8D77;&#x4F86;&#x4E00;&#x6A23;&#xFF0C;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x5C01;&#x88DD;&#x548C;&#x96B1;&#x85CF;&#x5177;&#x9AD4;&#x985E;&#x578B;&#x548C;&#x5B83;&#x7684;&#x503C;&#x3002;&#x537D;&#x4F7F;&#x5177;&#x9AD4;&#x985E;&#x578B;&#x6709;&#x5176;&#x5B83;&#x7684;&#x65B9;&#x6CD5;&#x4E5F;&#x96BB;&#x6709;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x66B4;&#x9732;&#x51FA;&#x4F86;&#x7684;&#x65B9;&#x6CD5;&#x6703;&#x88AB;&#x8ABF;&#x7528;&#x5230;&#xFF1A;</p>
+<pre><code class="lang-go">os.Stdout.Write([]<span class="hljs-typename">byte</span>(<span class="hljs-string">&quot;hello&quot;</span>)) <span class="hljs-comment">// OK: *os.File has Write method</span>
+os.Stdout.Close()                <span class="hljs-comment">// OK: *os.File has Close method</span>
+
+<span class="hljs-keyword">var</span> w io.Writer
+w = os.Stdout
+w.Write([]<span class="hljs-typename">byte</span>(<span class="hljs-string">&quot;hello&quot;</span>)) <span class="hljs-comment">// OK: io.Writer has Write method</span>
+w.Close()                <span class="hljs-comment">// compile error: io.Writer lacks Close method</span>
+</code></pre>
+<p>&#x4E00;&#x500B;&#x6709;&#x66F4;&#x591A;&#x65B9;&#x6CD5;&#x7684;&#x63A5;&#x53E3;&#x985E;&#x578B;&#xFF0C;&#x6BD4;&#x5982;io.ReadWriter&#xFF0C;&#x548C;&#x5C11;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#x7684;&#x63A5;&#x53E3;&#x985E;&#x578B;,&#x4F8B;&#x5982;io.Reader&#xFF0C;&#x9032;&#x884C;&#x5C0D;&#x6BD4;&#xFF1B;&#x66F4;&#x591A;&#x65B9;&#x6CD5;&#x7684;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x6703;&#x544A;&#x8A34;&#x6211;&#x5011;&#x66F4;&#x591A;&#x95DC;&#x65BC;&#x5B83;&#x7684;&#x503C;&#x6301;&#x6709;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F75;&#x4E14;&#x5C0D;&#x5BE6;&#x73FE;&#x5B83;&#x7684;&#x985E;&#x578B;&#x8981;&#x6C42;&#x66F4;&#x52A0;&#x56B4;&#x683C;&#x3002;&#x90A3;&#x9EBD;&#x95DC;&#x65BC;interface{}&#x985E;&#x578B;&#xFF0C;&#x5B83;&#x6C92;&#x6709;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#xFF0C;&#x8ACB;&#x8B1B;&#x51FA;&#x54EA;&#x4E9B;&#x5177;&#x9AD4;&#x7684;&#x985E;&#x578B;&#x5BE6;&#x73FE;&#x4E86;&#x5B83;&#xFF1F;</p>
+<p>&#x9019;&#x770B;&#x4E0A;&#x53BB;&#x597D;&#x50CF;&#x6C92;&#x6709;&#x7528;&#xFF0C;&#x4F46;&#x5BE6;&#x969B;&#x4E0A;interface{}&#x88AB;&#x7A31;&#x7232;&#x7A7A;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x662F;&#x4E0D;&#x53EF;&#x6216;&#x7F3A;&#x7684;&#x3002;&#x56E0;&#x7232;&#x7A7A;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x5C0D;&#x5BE6;&#x73FE;&#x5B83;&#x7684;&#x985E;&#x578B;&#x6C92;&#x6709;&#x8981;&#x6C42;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x5C07;&#x4EFB;&#x610F;&#x4E00;&#x500B;&#x503C;&#x8CE6;&#x7D66;&#x7A7A;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x3002;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">var</span> any <span class="hljs-keyword">interface</span>{}
+any = <span class="hljs-constant">true</span>
+any = <span class="hljs-number">12.34</span>
+any = <span class="hljs-string">&quot;hello&quot;</span>
+any = <span class="hljs-keyword">map</span>[<span class="hljs-typename">string</span>]<span class="hljs-typename">int</span>{<span class="hljs-string">&quot;one&quot;</span>: <span class="hljs-number">1</span>}
+any = <span class="hljs-built_in">new</span>(bytes.Buffer)
+</code></pre>
+<p>&#x76E1;&#x7BA1;&#x4E0D;&#x662F;&#x5F88;&#x660E;&#x986F;&#xFF0C;&#x5F9E;&#x672C;&#x66F8;&#x6700;&#x65E9;&#x7684;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x6211;&#x5011;&#x5C31;&#x5DF2;&#x7D93;&#x5728;&#x4F7F;&#x7528;&#x7A7A;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x3002;&#x5B83;&#x5141;&#x8A31;&#x50CF;fmt.Println&#x6216;&#x8005;5.7&#x7AE0;&#x4E2D;&#x7684;errorf&#x51FD;&#x6578;&#x63A5;&#x53D7;&#x4EFB;&#x4F55;&#x985E;&#x578B;&#x7684;&#x53C3;&#x6578;&#x3002;</p>
+<p>&#x5C0D;&#x65BC;&#x5275;&#x5EFA;&#x7684;&#x4E00;&#x500B;interface{}&#x503C;&#x6301;&#x6709;&#x4E00;&#x500B;boolean&#xFF0C;float&#xFF0C;string&#xFF0C;map&#xFF0C;pointer&#xFF0C;&#x6216;&#x8005;&#x4EFB;&#x610F;&#x5176;&#x5B83;&#x7684;&#x985E;&#x578B;&#xFF1B;&#x6211;&#x5011;&#x7576;&#x7136;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5C0D;&#x5B83;&#x6301;&#x6709;&#x7684;&#x503C;&#x505A;&#x64CD;&#x4F5C;&#xFF0C;&#x56E0;&#x7232;interface{}&#x6C92;&#x6709;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#x3002;&#x6211;&#x5011;&#x6703;&#x5728;7.10&#x7AE0;&#x4E2D;&#x5B78;&#x5230;&#x4E00;&#x7A2E;&#x7528;&#x985E;&#x578B;&#x65B7;&#x8A00;&#x4F86;&#x7372;&#x53D6;interface{}&#x4E2D;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x56E0;&#x7232;&#x63A5;&#x53E3;&#x5BE6;&#x73FE;&#x96BB;&#x4F9D;&#x8CF4;&#x65BC;&#x5224;&#x65B7;&#x7684;&#x5169;&#x500B;&#x985E;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x6C92;&#x6709;&#x5FC5;&#x8981;&#x5B9A;&#x7FA9;&#x4E00;&#x500B;&#x5177;&#x9AD4;&#x985E;&#x578B;&#x548C;&#x5B83;&#x5BE6;&#x73FE;&#x7684;&#x63A5;&#x53E3;&#x4E4B;&#x9593;&#x7684;&#x95DC;&#x7E6B;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8AAC;&#xFF0C;&#x5690;&#x8A66;&#x6587;&#x6A94;&#x5316;&#x548C;&#x65B7;&#x8A00;&#x9019;&#x7A2E;&#x95DC;&#x7E6B;&#x5E7E;&#x4E4E;&#x6C92;&#x6709;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x4F75;&#x6C92;&#x6709;&#x901A;&#x904E;&#x7A0B;&#x5E8F;&#x5F37;&#x88FD;&#x5B9A;&#x7FA9;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x5B9A;&#x7FA9;&#x5728;&#x7DE8;&#x8B6F;&#x671F;&#x65B7;&#x8A00;&#x4E00;&#x500B;*bytes.Buffer&#x7684;&#x503C;&#x5BE6;&#x73FE;&#x4E86;io.Writer&#x63A5;&#x53E3;&#x985E;&#x578B;:</p>
+<pre><code class="lang-go"><span class="hljs-comment">// *bytes.Buffer must satisfy io.Writer</span>
+<span class="hljs-keyword">var</span> w io.Writer = <span class="hljs-built_in">new</span>(bytes.Buffer)
+</code></pre>
+<p>&#x56E0;&#x7232;&#x4EFB;&#x610F;<em>bytes.Buffer&#x7684;&#x503C;&#xFF0C;&#x751A;&#x81F3;&#x5305;&#x62EC;nil&#x901A;&#x904E;(</em>bytes.Buffer)(nil)&#x9032;&#x884C;&#x986F;&#x793A;&#x7684;&#x8F49;&#x63DB;&#x90FD;&#x5BE6;&#x73FE;&#x4E86;&#x9019;&#x500B;&#x63A5;&#x53E3;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5011;&#x4E0D;&#x5FC5;&#x5206;&#x914D;&#x4E00;&#x500B;&#x65B0;&#x7684;&#x8B8A;&#x91CF;&#x3002;&#x4F75;&#x4E14;&#x56E0;&#x7232;&#x6211;&#x5011;&#x7D76;&#x4E0D;&#x6703;&#x5F15;&#x7528;&#x8B8A;&#x91CF;w&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7A7A;&#x6A19;&#x8B58;&#x7B26;&#x4F86;&#x4F86;&#x9032;&#x884C;&#x4EE3;&#x66FF;&#x3002;&#x7E3D;&#x7684;&#x770B;&#xFF0C;&#x9019;&#x4E9B;&#x8B8A;&#x5316;&#x53EF;&#x4EE5;&#x8B93;&#x6211;&#x5011;&#x5F97;&#x5230;&#x4E00;&#x500B;&#x66F4;&#x6A38;&#x7D20;&#x7684;&#x7248;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-comment">// *bytes.Buffer must satisfy io.Writer</span>
+<span class="hljs-keyword">var</span> _ io.Writer = (*bytes.Buffer)(<span class="hljs-constant">nil</span>)
+</code></pre>
+<p>&#x975E;&#x7A7A;&#x7684;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x6BD4;&#x5982;io.Writer&#x7D93;&#x5E38;&#x88AB;&#x6307;&#x91DD;&#x985E;&#x578B;&#x5BE6;&#x73FE;&#xFF0C;&#x5C24;&#x5176;&#x7576;&#x4E00;&#x500B;&#x6216;&#x591A;&#x500B;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x50CF;Write&#x65B9;&#x6CD5;&#x90A3;&#x6A23;&#x96B1;&#x5F0F;&#x7684;&#x7D66;&#x63A5;&#x6536;&#x8005;&#x5E36;&#x4F86;&#x8B8A;&#x5316;&#x7684;&#x6642;&#x5019;&#x3002;&#x4E00;&#x500B;&#x7D50;&#x69CB;&#x9AD4;&#x7684;&#x6307;&#x91DD;&#x662F;&#x975E;&#x5E38;&#x5E38;&#x898B;&#x7684;&#x627F;&#x8F09;&#x65B9;&#x6CD5;&#x7684;&#x985E;&#x578B;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x4F75;&#x4E0D;&#x610F;&#x5473;&#x7740;&#x96BB;&#x6709;&#x6307;&#x91DD;&#x985E;&#x578B;&#x6EFF;&#x8DB3;&#x63A5;&#x53E3;&#x985E;&#x578B;&#xFF0C;&#x751A;&#x81F3;&#x9023;&#x4E00;&#x4E9B;&#x6709;&#x8A2D;&#x7F6E;&#x65B9;&#x6CD5;&#x7684;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x4E5F;&#x53EF;&#x80FD;&#x6703;&#x88AB;Go&#x8A9E;&#x8A00;&#x4E2D;&#x5176;&#x5B83;&#x7684;&#x5F15;&#x7528;&#x985E;&#x578B;&#x5BE6;&#x73FE;&#x3002;&#x6211;&#x5011;&#x5DF2;&#x7D93;&#x770B;&#x904E;slice&#x985E;&#x578B;&#x7684;&#x65B9;&#x6CD5;(geometry.Path, &#xA7;6.1)&#x548C;map&#x985E;&#x578B;&#x7684;&#x65B9;&#x6CD5;(url.Values, &#xA7;6.2.1)&#xFF0C;&#x5F8C;&#x9762;&#x9084;&#x6703;&#x770B;&#x5230;&#x51FD;&#x6578;&#x985E;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x4F8B;&#x5B50;(http.HandlerFunc, &#xA7;7.7)&#x3002;&#x751A;&#x81F3;&#x57FA;&#x672C;&#x7684;&#x985E;&#x578B;&#x4E5F;&#x53EF;&#x80FD;&#x6703;&#x5BE6;&#x73FE;&#x4E00;&#x4E9B;&#x63A5;&#x53E3;&#xFF1B;&#x5C31;&#x5982;&#x6211;&#x5011;&#x5728;7.4&#x7AE0;&#x4E2D;&#x770B;&#x5230;&#x7684;time.Duration&#x985E;&#x578B;&#x5BE6;&#x73FE;&#x4E86;fmt.Stringer&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x4E00;&#x500B;&#x5177;&#x9AD4;&#x7684;&#x985E;&#x578B;&#x53EF;&#x80FD;&#x5BE6;&#x73FE;&#x4E86;&#x5F88;&#x591A;&#x4E0D;&#x76F8;&#x95DC;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x8003;&#x616E;&#x5728;&#x4E00;&#x500B;&#x7D44;&#x7E54;&#x51FA;&#x552E;&#x6578;&#x5B57;&#x6587;&#x5316;&#x7523;&#x54C1;&#x6BD4;&#x5982;&#x97F3;&#x6A02;&#xFF0C;&#x96FB;&#x5F71;&#x548C;&#x66F8;&#x7C4D;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#x53EF;&#x80FD;&#x5B9A;&#x7FA9;&#x4E86;&#x4E0B;&#x5217;&#x7684;&#x5177;&#x9AD4;&#x985E;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-go">Album
+Book
+Movie
+Magazine
+Podcast
+TVEpisode
+Track
+</code></pre>
+<p>&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x628A;&#x6BCF;&#x500B;&#x62BD;&#x8C61;&#x7684;&#x7279;&#x9EDE;&#x7528;&#x63A5;&#x53E3;&#x4F86;&#x8868;&#x793A;&#x3002;&#x4E00;&#x4E9B;&#x7279;&#x6027;&#x5C0D;&#x65BC;&#x6240;&#x6709;&#x7684;&#x9019;&#x4E9B;&#x6587;&#x5316;&#x7523;&#x54C1;&#x90FD;&#x662F;&#x5171;&#x901A;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#x6A19;&#x984C;&#xFF0C;&#x5275;&#x4F5C;&#x65E5;&#x671F;&#x548C;&#x4F5C;&#x8005;&#x5217;&#x8868;&#x3002;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> Artifact <span class="hljs-keyword">interface</span> {
+    Title() <span class="hljs-typename">string</span>
+    Creators() []<span class="hljs-typename">string</span>
+    Created() time.Time
+}
+</code></pre>
+<p>&#x5176;&#x5B83;&#x7684;&#x4E00;&#x4E9B;&#x7279;&#x6027;&#x96BB;&#x5C0D;&#x7279;&#x5B9A;&#x985E;&#x578B;&#x7684;&#x6587;&#x5316;&#x7523;&#x54C1;&#x624D;&#x6709;&#x3002;&#x548C;&#x6587;&#x5B57;&#x6392;&#x7248;&#x7279;&#x6027;&#x76F8;&#x95DC;&#x7684;&#x96BB;&#x6709;books&#x548C;magazines&#xFF0C;&#x9084;&#x6709;&#x96BB;&#x6709;movies&#x548C;TV&#x5287;&#x96C6;&#x548C;&#x5C4F;&#x5E55;&#x5206;&#x8FA8;&#x7387;&#x76F8;&#x95DC;&#x3002;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> Text <span class="hljs-keyword">interface</span> {
+    Pages() <span class="hljs-typename">int</span>
+    Words() <span class="hljs-typename">int</span>
+    PageSize() <span class="hljs-typename">int</span>
+}
+<span class="hljs-keyword">type</span> Audio <span class="hljs-keyword">interface</span> {
+    Stream() (io.ReadCloser, error)
+    RunningTime() time.Duration
+    Format() <span class="hljs-typename">string</span> <span class="hljs-comment">// e.g., &quot;MP3&quot;, &quot;WAV&quot;</span>
+}
+<span class="hljs-keyword">type</span> Video <span class="hljs-keyword">interface</span> {
+    Stream() (io.ReadCloser, error)
+    RunningTime() time.Duration
+    Format() <span class="hljs-typename">string</span> <span class="hljs-comment">// e.g., &quot;MP4&quot;, &quot;WMV&quot;</span>
+    Resolution() (x, y <span class="hljs-typename">int</span>)
+}
+</code></pre>
+<p>&#x9019;&#x4E9B;&#x63A5;&#x53E3;&#x4E0D;&#x6B62;&#x662F;&#x4E00;&#x7A2E;&#x6709;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x4F86;&#x5206;&#x7D44;&#x76F8;&#x95DC;&#x7684;&#x5177;&#x9AD4;&#x985E;&#x578B;&#x548C;&#x8868;&#x793A;&#x4ED6;&#x5011;&#x4E4B;&#x9593;&#x7684;&#x5171;&#x540C;&#x7279;&#x5B9A;&#x3002;&#x6211;&#x5011;&#x5F8C;&#x9762;&#x53EF;&#x80FD;&#x6703;&#x767C;&#x73FE;&#x5176;&#x5B83;&#x7684;&#x5206;&#x7D44;&#x3002;&#x8209;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x5011;&#x767C;&#x73FE;&#x6211;&#x5011;&#x9700;&#x8981;&#x4EE5;&#x540C;&#x6A23;&#x7684;&#x65B9;&#x5F0F;&#x8655;&#x7406;Audio&#x548C;Video&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x5B9A;&#x7FA9;&#x4E00;&#x500B;Streamer&#x63A5;&#x53E3;&#x4F86;&#x4EE3;&#x8868;&#x5B83;&#x5011;&#x4E4B;&#x9593;&#x76F8;&#x540C;&#x7684;&#x90E8;&#x5206;&#x800C;&#x4E0D;&#x5FC5;&#x5C0D;&#x5DF2;&#x7D93;&#x5B58;&#x5728;&#x7684;&#x985E;&#x578B;&#x505A;&#x6539;&#x8B8A;&#x3002;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> Streamer <span class="hljs-keyword">interface</span> {
+    Stream() (io.ReadCloser, error)
+    RunningTime() time.Duration
+    Format() <span class="hljs-typename">string</span>
+}
+</code></pre>
+<p>&#x6BCF;&#x4E00;&#x500B;&#x5177;&#x9AD4;&#x985E;&#x578B;&#x7684;&#x7D44;&#x57FA;&#x65BC;&#x5B83;&#x5011;&#x76F8;&#x540C;&#x7684;&#x884C;&#x7232;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x6210;&#x4E00;&#x500B;&#x63A5;&#x53E3;&#x985E;&#x578B;&#x3002;&#x4E0D;&#x50CF;&#x57FA;&#x65BC;&#x985E;&#x7684;&#x8A9E;&#x8A00;&#xFF0C;&#x4ED6;&#x5011;&#x4E00;&#x500B;&#x985E;&#x5BE6;&#x73FE;&#x7684;&#x63A5;&#x53E3;&#x96C6;&#x5408;&#x9700;&#x8981;&#x9032;&#x884C;&#x986F;&#x5F0F;&#x7684;&#x5B9A;&#x7FA9;&#xFF0C;&#x5728;Go&#x8A9E;&#x8A00;&#x4E2D;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x5728;&#x9700;&#x8981;&#x7684;&#x6642;&#x5019;&#x5B9A;&#x7FA9;&#x4E00;&#x500B;&#x65B0;&#x7684;&#x62BD;&#x8C61;&#x6216;&#x8005;&#x7279;&#x5B9A;&#x7279;&#x9EDE;&#x7684;&#x7D44;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x8129;&#x6539;&#x5177;&#x9AD4;&#x985E;&#x578B;&#x7684;&#x5B9A;&#x7FA9;&#x3002;&#x7576;&#x5177;&#x9AD4;&#x7684;&#x985E;&#x578B;&#x4F86;&#x81EA;&#x4E0D;&#x540C;&#x7684;&#x4F5C;&#x8005;&#x6642;&#x9019;&#x7A2E;&#x65B9;&#x5F0F;&#x6703;&#x7279;&#x522B;&#x6709;&#x7528;&#x3002;&#x7576;&#x7136;&#x4E5F;&#x78BA;&#x5BE6;&#x6C92;&#x6709;&#x5FC5;&#x8981;&#x5728;&#x5177;&#x9AD4;&#x7684;&#x985E;&#x578B;&#x4E2D;&#x6307;&#x51FA;&#x9019;&#x4E9B;&#x5171;&#x6027;&#x3002;</p>
 
                     
                     </section>

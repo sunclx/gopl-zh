@@ -34,8 +34,8 @@
  - [x] 4.6 Text and HTML Templates
 - [x] Chapter 5: Functions
  - [x] 5.1 Function Declarations
- - [ ] 5.2 Recursion
- - [ ] 5.3 Multiple Return Values
+ - [x] 5.2 Recursion
+ - [x] 5.3 Multiple Return Values
  - [ ] 5.4 Errors
  - [ ] 5.5 Function Values
  - [ ] 5.6 Anonymous Functions
@@ -53,8 +53,8 @@
 - [x] Chapter 7: Interfaces
  - [x] 7.1 Interfaces as Contracts
  - [x] 7.2 Interface Types
- - [ ] 7.3 Interface Satisfaction
- - [ ] 7.4 Parsing Flags with flag.Value
+ - [x] 7.3 Interface Satisfaction
+ - [x] 7.4 Parsing Flags with flag.Value
  - [ ] 7.5 Interface Values
  - [ ] 7.6 Sorting with sort.Interface
  - [ ] 7.7 The http.Handler Interface
@@ -70,8 +70,8 @@
  - [x] 8.1 Goroutines
  - [x] 8.2 Example: Concurrent Clock Server
  - [x] 8.3 Example: Concu rent Echo Server
- - [ ] 8.4 Channels
- - [ ] 8.5 Looping in Parallel
+ - [x] 8.4 Channels
+ - [x] 8.5 Looping in Parallel
  - [x] 8.6 Example: Concurrent Web Crawler
  - [x] 8.7 Multiplexing with select
  - [x] 8.8 Example: Concurrent Directory Traversal
@@ -118,4 +118,3 @@
  - [x] 13.4 Calling C Code with cgo
  - [x] 13.5 Another Word of Caution
 - [ ] Errata
-
