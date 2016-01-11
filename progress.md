@@ -36,11 +36,11 @@
  - [x] 5.1 Function Declarations
  - [x] 5.2 Recursion
  - [x] 5.3 Multiple Return Values
- - [ ] 5.4 Errors
- - [ ] 5.5 Function Values
- - [ ] 5.6 Anonymous Functions
- - [ ] 5.7 Variadic Functions
- - [ ] 5.8 Deferred Function Calls
+ - [x] 5.4 Errors
+ - [x] 5.5 Function Values
+ - [x] 5.6 Anonymous Functions
+ - [x] 5.7 Variadic Functions
+ - [x] 5.8 Deferred Function Calls
  - [ ] 5.9 Panic
  - [ ] 5.10 Recover
 - [x] Chapter 6: Methods
@@ -55,7 +55,7 @@
  - [x] 7.2 Interface Types
  - [x] 7.3 Interface Satisfaction
  - [x] 7.4 Parsing Flags with flag.Value
- - [ ] 7.5 Interface Values
+ - [x] 7.5 Interface Values
  - [ ] 7.6 Sorting with sort.Interface
  - [ ] 7.7 The http.Handler Interface
  - [ ] 7.8 The error Interface
@@ -81,11 +81,11 @@
  - [ ] 9.1 Race Conditions
  - [ ] 9.2 Mutual Exclusion: sync.Mutex
  - [x] 9.3 Read/Write Mutexes: sync.RWMutex
- - [ ] 9.4 Memory Synchronization
- - [ ] 9.5 Lazy Initialization: sync.Once
- - [ ] 9.6 The Race Detector
+ - [x] 9.4 Memory Synchronization
+ - [x] 9.5 Lazy Initialization: sync.Once
+ - [x] 9.6 The Race Detector
  - [ ] 9.7 Example: Concurrent Non-Blocking Cache
- - [ ] 9.8 Goroutines and Threads
+ - [x] 9.8 Goroutines and Threads
 - [x] Chapter 10: Packages and the Go Tool
  - [x] 10.1 Introduction
  - [x] 10.2 Import Paths
