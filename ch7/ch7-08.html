@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="7.8" data-chapter-title="error接口" data-filepath="ch7/ch7-08.md" data-basepath=".." data-revision="Tue Jan 12 2016 10:04:19 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="7.8" data-chapter-title="error接口" data-filepath="ch7/ch7-08.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2036,6 +2036,21 @@
             
         </li>
     
+        <li class="chapter " data-level="14.4" data-path="appendix/appendix-d-translations.html">
+            
+                
+                    <a href="../appendix/appendix-d-translations.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.</b>
+                        
+                        附录D：其它语言
+                    </a>
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -2075,7 +2090,59 @@
                     <section class="normal" id="section-">
                     
                         <h2 id="78-error&#x63A5;&#x53E3;">7.8. error&#x63A5;&#x53E3;</h2>
-<p>TODO</p>
+<p>&#x4ECE;&#x672C;&#x4E66;&#x7684;&#x5F00;&#x59CB;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x548C;&#x4F7F;&#x7528;&#x8FC7;&#x795E;&#x79D8;&#x7684;&#x9884;&#x5B9A;&#x4E49;error&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x4E14;&#x6CA1;&#x6709;&#x89E3;&#x91CA;&#x5B83;&#x7A76;&#x7ADF;&#x662F;&#x4EC0;&#x4E48;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#x5B83;&#x5C31;&#x662F;interface&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x6709;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x7684;&#x5355;&#x4E00;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> error <span class="hljs-keyword">interface</span> {
+    Error() <span class="hljs-typename">string</span>
+}
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;error&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x8C03;&#x7528;errors.New&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x4F1A;&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;error&#x3002;&#x6574;&#x4E2A;errors&#x5305;&#x4EC5;&#x53EA;&#x6709;4&#x884C;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> errors
+
+<span class="hljs-keyword">func</span> New(text <span class="hljs-typename">string</span>) error { <span class="hljs-keyword">return</span> &amp;errorString{text} }
+
+<span class="hljs-keyword">type</span> errorString <span class="hljs-keyword">struct</span> { text <span class="hljs-typename">string</span> }
+
+<span class="hljs-keyword">func</span> (e *errorString) Error() <span class="hljs-typename">string</span> { <span class="hljs-keyword">return</span> e.text }
+</code></pre>
+<p>&#x627F;&#x8F7D;errorString&#x7684;&#x7C7B;&#x578B;&#x662F;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x800C;&#x975E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x4FDD;&#x62A4;&#x5B83;&#x8868;&#x793A;&#x7684;&#x9519;&#x8BEF;&#x907F;&#x514D;&#x7C97;&#x5FC3;&#xFF08;&#x6216;&#x6709;&#x610F;&#xFF09;&#x7684;&#x66F4;&#x65B0;&#x3002;&#x5E76;&#x4E14;&#x56E0;&#x4E3A;&#x662F;&#x6307;&#x9488;&#x7C7B;&#x578B;*errorString&#x6EE1;&#x8DB3;error&#x63A5;&#x53E3;&#x800C;&#x975E;errorString&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x4E2A;New&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x90FD;&#x5206;&#x914D;&#x4E86;&#x4E00;&#x4E2A;&#x72EC;&#x7279;&#x7684;&#x548C;&#x5176;&#x4ED6;&#x9519;&#x8BEF;&#x4E0D;&#x76F8;&#x540C;&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x4E0D;&#x60F3;&#x8981;&#x91CD;&#x8981;&#x7684;error&#x4F8B;&#x5982;io.EOF&#x548C;&#x4E00;&#x4E2A;&#x521A;&#x597D;&#x6709;&#x76F8;&#x540C;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x7684;error&#x6BD4;&#x8F83;&#x540E;&#x76F8;&#x7B49;&#x3002;</p>
+<pre><code class="lang-go">fmt.Println(errors.New(<span class="hljs-string">&quot;EOF&quot;</span>) == errors.New(<span class="hljs-string">&quot;EOF&quot;</span>)) <span class="hljs-comment">// &quot;false&quot;</span>
+</code></pre>
+<p>&#x8C03;&#x7528;errors.New&#x51FD;&#x6570;&#x662F;&#x975E;&#x5E38;&#x7A00;&#x5C11;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x4FBF;&#x7684;&#x5C01;&#x88C5;&#x51FD;&#x6570;fmt.Errorf&#xFF0C;&#x5B83;&#x8FD8;&#x4F1A;&#x5904;&#x7406;&#x5B57;&#x7B26;&#x4E32;&#x683C;&#x5F0F;&#x5316;&#x3002;&#x6211;&#x4EEC;&#x66FE;&#x591A;&#x6B21;&#x5728;&#x7B2C;5&#x7AE0;&#x4E2D;&#x7528;&#x5230;&#x5B83;&#x3002;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> fmt
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;errors&quot;</span>
+
+<span class="hljs-keyword">func</span> Errorf(format <span class="hljs-typename">string</span>, args ...<span class="hljs-keyword">interface</span>{}) error {
+    <span class="hljs-keyword">return</span> errors.New(Sprintf(format, args...))
+}
+</code></pre>
+<p>&#x867D;&#x7136;*errorString&#x53EF;&#x80FD;&#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#x9519;&#x8BEF;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x8FDC;&#x975E;&#x53EA;&#x6709;&#x5B83;&#x4E00;&#x4E2A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;syscall&#x5305;&#x63D0;&#x4F9B;&#x4E86;Go&#x8BED;&#x8A00;&#x5E95;&#x5C42;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;API&#x3002;&#x5728;&#x591A;&#x4E2A;&#x5E73;&#x53F0;&#x4E0A;&#xFF0C;&#x5B83;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;error&#x63A5;&#x53E3;&#x7684;&#x6570;&#x5B57;&#x7C7B;&#x578B;Errno&#xFF0C;&#x5E76;&#x4E14;&#x5728;Unix&#x5E73;&#x53F0;&#x4E0A;&#xFF0C;Errno&#x7684;Error&#x65B9;&#x6CD5;&#x4F1A;&#x4ECE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x4E2D;&#x67E5;&#x627E;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x5C55;&#x793A;&#x7684;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> syscall
+
+<span class="hljs-keyword">type</span> Errno <span class="hljs-typename">uintptr</span> <span class="hljs-comment">// operating system error code</span>
+
+<span class="hljs-keyword">var</span> errors = [...]<span class="hljs-typename">string</span>{
+    <span class="hljs-number">1</span>:   <span class="hljs-string">&quot;operation not permitted&quot;</span>,   <span class="hljs-comment">// EPERM</span>
+    <span class="hljs-number">2</span>:   <span class="hljs-string">&quot;no such file or directory&quot;</span>, <span class="hljs-comment">// ENOENT</span>
+    <span class="hljs-number">3</span>:   <span class="hljs-string">&quot;no such process&quot;</span>,           <span class="hljs-comment">// ESRCH</span>
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">func</span> (e Errno) Error() <span class="hljs-typename">string</span> {
+    <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= <span class="hljs-typename">int</span>(e) &amp;&amp; <span class="hljs-typename">int</span>(e) &lt; <span class="hljs-built_in">len</span>(errors) {
+        <span class="hljs-keyword">return</span> errors[e]
+    }
+    <span class="hljs-keyword">return</span> fmt.Sprintf(<span class="hljs-string">&quot;errno %d&quot;</span>, e)
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x53E5;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x6301;&#x6709;Errno&#x503C;&#x4E3A;2&#x7684;&#x63A5;&#x53E3;&#x503C;&#xFF0C;&#x8868;&#x793A;POSIX ENOENT&#x72B6;&#x51B5;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">var</span> err error = syscall.Errno(<span class="hljs-number">2</span>)
+fmt.Println(err.Error()) <span class="hljs-comment">// &quot;no such file or directory&quot;</span>
+fmt.Println(err)         <span class="hljs-comment">// &quot;no such file or directory&quot;</span>
+</code></pre>
+<p>err&#x7684;&#x503C;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x5448;&#x73B0;&#x5728;&#x56FE;7.6&#x4E2D;&#x3002;</p>
+<p><img src="../images/ch7-06.png" alt=""></p>
+<p>Errno&#x662F;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x9519;&#x8BEF;&#x7684;&#x9AD8;&#x6548;&#x8868;&#x793A;&#x65B9;&#x5F0F;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x6709;&#x9650;&#x7684;&#x96C6;&#x5408;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x6EE1;&#x8DB3;&#x6807;&#x51C6;&#x7684;&#x9519;&#x8BEF;&#x63A5;&#x53E3;&#x3002;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x7B2C;7.11&#x8282;&#x4E86;&#x89E3;&#x5230;&#x5176;&#x5B83;&#x6EE1;&#x8DB3;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
 
                     
                     </section>

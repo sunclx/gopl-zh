@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="5.8" data-chapter-title="Deferred函数" data-filepath="ch5/ch5-08.md" data-basepath=".." data-revision="Tue Jan 12 2016 10:04:19 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="5.8" data-chapter-title="Deferred函数" data-filepath="ch5/ch5-08.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2036,6 +2036,21 @@
             
         </li>
     
+        <li class="chapter " data-level="14.4" data-path="appendix/appendix-d-translations.html">
+            
+                
+                    <a href="../appendix/appendix-d-translations.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.</b>
+                        
+                        附录D：其它语言
+                    </a>
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -2173,12 +2188,11 @@ title: https://golang.org/doc/gopher/frontpage.png has type image/png, not text/
 }
 </code></pre>
 <p>&#x6BCF;&#x4E00;&#x6B21;bigSlowOperation&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x7A0B;&#x5E8F;&#x90FD;&#x4F1A;&#x8BB0;&#x5F55;&#x51FD;&#x6570;&#x7684;&#x8FDB;&#x5165;&#xFF0C;&#x9000;&#x51FA;&#xFF0C;&#x6301;&#x7EED;&#x65F6;&#x95F4;&#x3002;&#xFF08;&#x6211;&#x4EEC;&#x7528;time.Sleep&#x6A21;&#x62DF;&#x4E00;&#x4E2A;&#x8017;&#x65F6;&#x7684;&#x64CD;&#x4F5C;&#xFF09;</p>
-<pre><code class="lang-powershell">$ go build gopl.io/ch5/trace
+<pre><code>$ go build gopl.io/ch5/trace
 $ ./trace
-<span class="hljs-number">2015</span>/<span class="hljs-number">11</span>/<span class="hljs-number">18</span> <span class="hljs-number">09</span>:<span class="hljs-number">53</span>:<span class="hljs-number">26</span> enter bigSlowOperation
-<span class="hljs-number">2015</span>/<span class="hljs-number">11</span>/<span class="hljs-number">18</span> <span class="hljs-number">09</span>:<span class="hljs-number">53</span>:<span class="hljs-number">36</span> <span class="hljs-keyword">exit</span> bigSlowOperation (<span class="hljs-number">10.000589217</span>s)
-</code></pre>
-<p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;defer&#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x4F1A;&#x5728;return&#x8BED;&#x53E5;&#x66F4;&#x65B0;&#x8FD4;&#x56DE;&#x503C;&#x53D8;&#x91CF;&#x540E;&#x518D;&#x6267;&#x884C;&#xFF0C;&#x53C8;&#x56E0;&#x4E3A;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x533F;&#x540D;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8BE5;&#x51FD;&#x6570;&#x5305;&#x62EC;&#x8FD4;&#x56DE;&#x503C;&#x53D8;&#x91CF;&#x5728;&#x5185;&#x7684;&#x6240;&#x6709;&#x53D8;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5BF9;&#x533F;&#x540D;&#x51FD;&#x6570;&#x91C7;&#x7528;defer&#x673A;&#x5236;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x5176;&#x89C2;&#x5BDF;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+2015/11/18 09:53:26 enter bigSlowOperation
+2015/11/18 09:53:36 exit bigSlowOperation (10.000589217s)
+</code></pre><p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;defer&#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x4F1A;&#x5728;return&#x8BED;&#x53E5;&#x66F4;&#x65B0;&#x8FD4;&#x56DE;&#x503C;&#x53D8;&#x91CF;&#x540E;&#x518D;&#x6267;&#x884C;&#xFF0C;&#x53C8;&#x56E0;&#x4E3A;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x533F;&#x540D;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8BE5;&#x51FD;&#x6570;&#x5305;&#x62EC;&#x8FD4;&#x56DE;&#x503C;&#x53D8;&#x91CF;&#x5728;&#x5185;&#x7684;&#x6240;&#x6709;&#x53D8;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5BF9;&#x533F;&#x540D;&#x51FD;&#x6570;&#x91C7;&#x7528;defer&#x673A;&#x5236;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x5176;&#x89C2;&#x5BDF;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
 <p>&#x4EE5;double&#x51FD;&#x6570;&#x4E3A;&#x4F8B;&#xFF1A;</p>
 <pre><code class="lang-Go"><span class="hljs-keyword">func</span> double(x <span class="hljs-typename">int</span>) <span class="hljs-typename">int</span> {
     <span class="hljs-keyword">return</span> x + x
