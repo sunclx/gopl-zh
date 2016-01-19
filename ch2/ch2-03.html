@@ -8,7 +8,7 @@
         <title>变量 | Go语言圣经</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.2">
+        <meta name="generator" content="GitBook 2.3.0">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -22,14 +22,6 @@
     
         
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -48,20 +40,22 @@
     <body>
         
         
-    <div class="book" data-level="2.3" data-chapter-title="变量" data-filepath="ch2/ch2-03.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="Wed Jan 20 2016 00:12:20 GMT+0800 (CST)">
     
 
 <div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
-            
-            
-            
-            
+    <div class="book-search">
+        <input type="text" placeholder="輸入並搜尋" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
 
-            
+        
 
-            
+        
     
         <li class="chapter " data-level="0" data-path="index.html">
             
@@ -2058,23 +2052,95 @@
     
 
 
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    本書使用 GitBook 釋出
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                本書使用 GitBook 釋出
+            </a>
+        </li>
+        
+    </ul>
 </div>
 
     <div class="book-body">
         <div class="body-inner">
-            <div class="book-header" role="navigation">
+            <div class="book-header">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="目錄"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="搜尋"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="字型設定"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">襯線體</button>
+        <button type="button" data-font="1" class="button">無襯線體</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">白色</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">棕褐色</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">夜間</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="分享"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    分享到 Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    分享到 Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    分享到 Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    分享到 Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    分享到 Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -2083,13 +2149,13 @@
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
+            <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="23-&#x53D8;&#x91CF;">2.3. &#x53D8;&#x91CF;</h2>
+                        <h2 id="2-3-%E5%8F%98%E9%87%8F">2.3. &#x53D8;&#x91CF;</h2>
 <p>var&#x58F0;&#x660E;&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x7ED9;&#x53D8;&#x91CF;&#x9644;&#x52A0;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x5E76;&#x4E14;&#x8BBE;&#x7F6E;&#x53D8;&#x91CF;&#x7684;&#x521D;&#x59CB;&#x503C;&#x3002;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x7684;&#x4E00;&#x822C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-Go"><span class="hljs-keyword">var</span> &#x53D8;&#x91CF;&#x540D;&#x5B57; &#x7C7B;&#x578B; = &#x8868;&#x8FBE;&#x5F0F;
 </code></pre>
@@ -2107,7 +2173,7 @@ fmt.Println(s) <span class="hljs-comment">// &quot;&quot;</span>
 <p>&#x4E00;&#x7EC4;&#x53D8;&#x91CF;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x7531;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x591A;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#x521D;&#x59CB;&#x5316;&#xFF1A;</p>
 <pre><code class="lang-Go"><span class="hljs-keyword">var</span> f, err = os.Open(name) <span class="hljs-comment">// os.Open returns a file and an error</span>
 </code></pre>
-<h3 id="231-&#x7B80;&#x77ED;&#x53D8;&#x91CF;&#x58F0;&#x660E;">2.3.1. &#x7B80;&#x77ED;&#x53D8;&#x91CF;&#x58F0;&#x660E;</h3>
+<h3 id="2-3-1-%E7%AE%80%E7%9F%AD%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E">2.3.1. &#x7B80;&#x77ED;&#x53D8;&#x91CF;&#x58F0;&#x660E;</h3>
 <p>&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#xFF0C;&#x6709;&#x4E00;&#x79CD;&#x79F0;&#x4E3A;&#x7B80;&#x77ED;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x8BED;&#x53E5;&#x7684;&#x5F62;&#x5F0F;&#x53EF;&#x7528;&#x4E8E;&#x58F0;&#x660E;&#x548C;&#x521D;&#x59CB;&#x5316;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3002;&#x5B83;&#x4EE5;&#x201C;&#x540D;&#x5B57; := &#x8868;&#x8FBE;&#x5F0F;&#x201D;&#x5F62;&#x5F0F;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#xFF0C;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x6839;&#x636E;&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x3002;&#x4E0B;&#x9762;&#x662F;lissajous&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4E09;&#x4E2A;&#x7B80;&#x77ED;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x8BED;&#x53E5;&#xFF08;&#xA7;1.4&#xFF09;&#xFF1A;</p>
 <pre><code class="lang-Go">anim := gif.GIF{LoopCount: nframes}
 freq := rand.Float64() * <span class="hljs-number">3.0</span>
@@ -2148,7 +2214,7 @@ f, err := os.Create(outfile) <span class="hljs-comment">// compile error: no new
 </code></pre>
 <p>&#x89E3;&#x51B3;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x7B80;&#x77ED;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x8BED;&#x53E5;&#x6539;&#x7528;&#x666E;&#x901A;&#x7684;&#x591A;&#x91CD;&#x8D4B;&#x503C;&#x8BED;&#x8A00;&#x3002;</p>
 <p>&#x7B80;&#x77ED;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x8BED;&#x53E5;&#x53EA;&#x6709;&#x5BF9;&#x5DF2;&#x7ECF;&#x5728;&#x540C;&#x7EA7;&#x8BCD;&#x6CD5;&#x57DF;&#x58F0;&#x660E;&#x8FC7;&#x7684;&#x53D8;&#x91CF;&#x624D;&#x548C;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;&#x8BED;&#x53E5;&#x7B49;&#x4EF7;&#xFF0C;&#x5982;&#x679C;&#x53D8;&#x91CF;&#x662F;&#x5728;&#x5916;&#x90E8;&#x8BCD;&#x6CD5;&#x57DF;&#x58F0;&#x660E;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x7B80;&#x77ED;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x8BED;&#x53E5;&#x5C06;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x8BCD;&#x6CD5;&#x57DF;&#x91CD;&#x65B0;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x53D8;&#x91CF;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x672C;&#x7AE0;&#x540E;&#x9762;&#x5C06;&#x4F1A;&#x770B;&#x5230;&#x7C7B;&#x4F3C;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
-<h3 id="232-&#x6307;&#x9488;">2.3.2. &#x6307;&#x9488;</h3>
+<h3 id="2-3-2-%E6%8C%87%E9%92%88">2.3.2. &#x6307;&#x9488;</h3>
 <p>&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x4FDD;&#x5B58;&#x4E86;&#x53D8;&#x91CF;&#x5BF9;&#x5E94;&#x7C7B;&#x578B;&#x503C;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;&#x666E;&#x901A;&#x53D8;&#x91CF;&#x5728;&#x58F0;&#x660E;&#x8BED;&#x53E5;&#x521B;&#x5EFA;&#x65F6;&#x88AB;&#x7ED1;&#x5B9A;&#x5230;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x540D;&#xFF0C;&#x6BD4;&#x5982;&#x53EB;x&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x53D8;&#x91CF;&#x59CB;&#x7EC8;&#x4EE5;&#x8868;&#x8FBE;&#x5F0F;&#x65B9;&#x5F0F;&#x5F15;&#x5165;&#xFF0C;&#x4F8B;&#x5982;x[i]&#x6216;x.f&#x53D8;&#x91CF;&#x3002;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x8868;&#x8FBE;&#x5F0F;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x9664;&#x975E;&#x5B83;&#x4EEC;&#x662F;&#x51FA;&#x73B0;&#x5728;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x7684;&#x5DE6;&#x8FB9;&#xFF0C;&#x8FD9;&#x79CD;&#x65F6;&#x5019;&#x662F;&#x7ED9;&#x5BF9;&#x5E94;&#x53D8;&#x91CF;&#x8D4B;&#x4E88;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x503C;&#x3002;</p>
 <p>&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x7684;&#x503C;&#x662F;&#x53E6;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x5730;&#x5740;&#x3002;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x5BF9;&#x5E94;&#x53D8;&#x91CF;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x3002;&#x5E76;&#x4E0D;&#x662F;&#x6BCF;&#x4E00;&#x4E2A;&#x503C;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x5730;&#x5740;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5FC5;&#x7136;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x3002;&#x901A;&#x8FC7;&#x6307;&#x9488;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BFB;&#x6216;&#x66F4;&#x65B0;&#x5BF9;&#x5E94;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x77E5;&#x9053;&#x8BE5;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x5B57;&#xFF08;&#x5982;&#x679C;&#x53D8;&#x91CF;&#x6709;&#x540D;&#x5B57;&#x7684;&#x8BDD;&#xFF09;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x7528;&#x201C;var x int&#x201D;&#x58F0;&#x660E;&#x8BED;&#x53E5;&#x58F0;&#x660E;&#x4E00;&#x4E2A;x&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&amp;x&#x8868;&#x8FBE;&#x5F0F;&#xFF08;&#x53D6;x&#x53D8;&#x91CF;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#xFF09;&#x5C06;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x8BE5;&#x6574;&#x6570;&#x53D8;&#x91CF;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x9488;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;<code>*int</code>&#xFF0C;&#x6307;&#x9488;&#x88AB;&#x79F0;&#x4E4B;&#x4E3A;&#x201C;&#x6307;&#x5411;int&#x7C7B;&#x578B;&#x7684;&#x6307;&#x9488;&#x201D;&#x3002;&#x5982;&#x679C;&#x6307;&#x9488;&#x540D;&#x5B57;&#x4E3A;p&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x8BF4;&#x201C;p&#x6307;&#x9488;&#x6307;&#x5411;&#x53D8;&#x91CF;x&#x201D;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x201C;p&#x6307;&#x9488;&#x4FDD;&#x5B58;&#x4E86;x&#x53D8;&#x91CF;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x201D;&#x3002;&#x540C;&#x65F6;<code>*p</code>&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x5E94;p&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;&#x4E00;&#x822C;<code>*p</code>&#x8868;&#x8FBE;&#x5F0F;&#x8BFB;&#x53D6;&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3A;int&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF0C;&#x540C;&#x65F6;&#x56E0;&#x4E3A;<code>*p</code>&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;&#x8BE5;&#x8868;&#x8FBE;&#x5F0F;&#x4E5F;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x7684;&#x5DE6;&#x8FB9;&#xFF0C;&#x8868;&#x793A;&#x66F4;&#x65B0;&#x6307;&#x9488;&#x6240;&#x6307;&#x5411;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;</p>
@@ -2223,7 +2289,7 @@ Usage of ./echo4:
   -n    omit trailing newline
   -s string
         separator (default &quot; &quot;)
-</code></pre><h3 id="233-new&#x51FD;&#x6570;">2.3.3. new&#x51FD;&#x6570;</h3>
+</code></pre><h3 id="2-3-3-new%E5%87%BD%E6%95%B0">2.3.3. new&#x51FD;&#x6570;</h3>
 <p>&#x53E6;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x8C03;&#x7528;&#x7528;&#x5185;&#x5EFA;&#x7684;new&#x51FD;&#x6570;&#x3002;&#x8868;&#x8FBE;&#x5F0F;new(T)&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;T&#x7C7B;&#x578B;&#x7684;&#x533F;&#x540D;&#x53D8;&#x91CF;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x4E3A;T&#x7C7B;&#x578B;&#x7684;&#x96F6;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x53D8;&#x91CF;&#x5730;&#x5740;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x4E3A;<code>*T</code>&#x3002;</p>
 <pre><code class="lang-Go">p := <span class="hljs-built_in">new</span>(<span class="hljs-typename">int</span>)   <span class="hljs-comment">// p, *int &#x7C7B;&#x578B;, &#x6307;&#x5411;&#x533F;&#x540D;&#x7684; int &#x53D8;&#x91CF;</span>
 fmt.Println(*p) <span class="hljs-comment">// &quot;0&quot;</span>
@@ -2252,7 +2318,7 @@ fmt.Println(p == q) <span class="hljs-comment">// &quot;false&quot;</span>
 <pre><code class="lang-Go"><span class="hljs-keyword">func</span> delta(old, <span class="hljs-built_in">new</span> <span class="hljs-typename">int</span>) <span class="hljs-typename">int</span> { <span class="hljs-keyword">return</span> <span class="hljs-built_in">new</span> - old }
 </code></pre>
 <p>&#x7531;&#x4E8E;new&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;int&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x540D;&#xFF0C;&#x56E0;&#x6B64;&#x5728;delta&#x51FD;&#x6570;&#x5185;&#x90E8;&#x662F;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;new&#x51FD;&#x6570;&#x7684;&#x3002;</p>
-<h3 id="234-&#x53D8;&#x91CF;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;">2.3.4. &#x53D8;&#x91CF;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</h3>
+<h3 id="2-3-4-%E5%8F%98%E9%87%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">2.3.4. &#x53D8;&#x91CF;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</h3>
 <p>&#x53D8;&#x91CF;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x6307;&#x7684;&#x662F;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x53D8;&#x91CF;&#x6709;&#x6548;&#x5B58;&#x5728;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x3002;&#x5BF9;&#x4E8E;&#x5728;&#x5305;&#x4E00;&#x7EA7;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x548C;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x8FD0;&#x884C;&#x5468;&#x671F;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;&#x800C;&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;&#x5728;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x58F0;&#x660E;&#x5468;&#x671F;&#x5219;&#x662F;&#x52A8;&#x6001;&#x7684;&#xFF1A;&#x4ECE;&#x6BCF;&#x6B21;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x53D8;&#x91CF;&#x7684;&#x58F0;&#x660E;&#x8BED;&#x53E5;&#x5F00;&#x59CB;&#xFF0C;&#x76F4;&#x5230;&#x8BE5;&#x53D8;&#x91CF;&#x4E0D;&#x518D;&#x88AB;&#x5F15;&#x7528;&#x4E3A;&#x6B62;&#xFF0C;&#x7136;&#x540E;&#x53D8;&#x91CF;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x53EF;&#x80FD;&#x88AB;&#x56DE;&#x6536;&#x3002;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x53D8;&#x91CF;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3002;&#x5B83;&#x4EEC;&#x5728;&#x51FD;&#x6570;&#x6BCF;&#x6B21;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x521B;&#x5EFA;&#x3002;</p>
 <p>&#x4F8B;&#x5982;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4ECE;1.4&#x8282;&#x7684;Lissajous&#x7A0B;&#x5E8F;&#x6458;&#x5F55;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#xFF1A;</p>
 <pre><code class="lang-Go"><span class="hljs-keyword">for</span> t := <span class="hljs-number">0.0</span>; t &lt; cycles*<span class="hljs-number">2</span>*math.Pi; t += res {
@@ -2312,17 +2378,9 @@ fmt.Println(p == q) <span class="hljs-comment">// &quot;false&quot;</span>
         
 <script src="../gitbook/app.js"></script>
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"katex":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

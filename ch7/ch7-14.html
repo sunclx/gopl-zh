@@ -8,7 +8,7 @@
         <title>示例: 基于标记的XML解码 | Go语言圣经</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.2">
+        <meta name="generator" content="GitBook 2.3.0">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -22,14 +22,6 @@
     
         
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -48,20 +40,22 @@
     <body>
         
         
-    <div class="book" data-level="7.14" data-chapter-title="示例: 基于标记的XML解码" data-filepath="ch7/ch7-14.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="7.14" data-basepath=".." data-revision="Wed Jan 20 2016 00:12:20 GMT+0800 (CST)">
     
 
 <div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
-            
-            
-            
-            
+    <div class="book-search">
+        <input type="text" placeholder="輸入並搜尋" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
 
-            
+        
 
-            
+        
     
         <li class="chapter " data-level="0" data-path="index.html">
             
@@ -2058,23 +2052,95 @@
     
 
 
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    本書使用 GitBook 釋出
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                本書使用 GitBook 釋出
+            </a>
+        </li>
+        
+    </ul>
 </div>
 
     <div class="book-body">
         <div class="body-inner">
-            <div class="book-header" role="navigation">
+            <div class="book-header">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="目錄"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="搜尋"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="字型設定"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">襯線體</button>
+        <button type="button" data-font="1" class="button">無襯線體</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">白色</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">棕褐色</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">夜間</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="分享"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    分享到 Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    分享到 Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    分享到 Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    分享到 Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    分享到 Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -2083,14 +2149,123 @@
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
+            <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="714-&#x793A;&#x4F8B;-&#x57FA;&#x4E8E;&#x6807;&#x8BB0;&#x7684;xml&#x89E3;&#x7801;">7.14. &#x793A;&#x4F8B;: &#x57FA;&#x4E8E;&#x6807;&#x8BB0;&#x7684;XML&#x89E3;&#x7801;</h2>
-<p>TODO</p>
+                        <h2 id="7-14-%E7%A4%BA%E4%BE%8B-%E5%9F%BA%E4%BA%8E%E6%A0%87%E8%AE%B0%E7%9A%84xml%E8%A7%A3%E7%A0%81">7.14. &#x793A;&#x4F8B;: &#x57FA;&#x4E8E;&#x6807;&#x8BB0;&#x7684;XML&#x89E3;&#x7801;</h2>
+<p>&#x7B2C;4.5&#x7AE0;&#x8282;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528;encoding/json&#x5305;&#x4E2D;&#x7684;Marshal&#x548C;Unmarshal&#x51FD;&#x6570;&#x6765;&#x5C06;JSON&#x6587;&#x6863;&#x8F6C;&#x6362;&#x6210;Go&#x8BED;&#x8A00;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;encoding/xml&#x5305;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x76F8;&#x4F3C;&#x7684;API&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x60F3;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x6811;&#x7684;&#x8868;&#x793A;&#x65F6;&#x4F7F;&#x7528;encoding/xml&#x5305;&#x4F1A;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x5F88;&#x591A;&#x7A0B;&#x5E8F;&#x5E76;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7684;&#x3002;encoding/xml&#x5305;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x66F4;&#x4F4E;&#x5C42;&#x7684;&#x57FA;&#x4E8E;&#x6807;&#x8BB0;&#x7684;API&#x7528;&#x4E8E;XML&#x89E3;&#x7801;&#x3002;&#x5728;&#x57FA;&#x4E8E;&#x6807;&#x8BB0;&#x7684;&#x6837;&#x5F0F;&#x4E2D;&#xFF0C;&#x89E3;&#x6790;&#x5668;&#x6D88;&#x8D39;&#x8F93;&#x5165;&#x548C;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#x6D41;&#xFF1B;&#x56DB;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x6807;&#x8BB0;&#x7C7B;&#x578B;&#xFF0D;StartElement&#xFF0C;EndElement&#xFF0C;CharData&#xFF0C;&#x548C;Comment&#xFF0D;&#x6BCF;&#x4E00;&#x4E2A;&#x90FD;&#x662F;encoding/xml&#x5305;&#x4E2D;&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x5BF9;(*xml.Decoder).Token&#x7684;&#x8C03;&#x7528;&#x90FD;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x663E;&#x793A;&#x7684;&#x662F;&#x548C;&#x8FD9;&#x4E2A;API&#x76F8;&#x5173;&#x7684;&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-go">encoding/xml
+<span class="hljs-keyword">package</span> xml
+
+<span class="hljs-keyword">type</span> Name <span class="hljs-keyword">struct</span> {
+    Local <span class="hljs-typename">string</span> <span class="hljs-comment">// e.g., &quot;Title&quot; or &quot;id&quot;</span>
+}
+
+<span class="hljs-keyword">type</span> Attr <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// e.g., name=&quot;value&quot;</span>
+    Name  Name
+    Value <span class="hljs-typename">string</span>
+}
+
+<span class="hljs-comment">// A Token includes StartElement, EndElement, CharData,</span>
+<span class="hljs-comment">// and Comment, plus a few esoteric types (not shown).</span>
+<span class="hljs-keyword">type</span> Token <span class="hljs-keyword">interface</span>{}
+<span class="hljs-keyword">type</span> StartElement <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// e.g., &lt;name&gt;</span>
+    Name Name
+    Attr []Attr
+}
+<span class="hljs-keyword">type</span> EndElement <span class="hljs-keyword">struct</span> { Name Name } <span class="hljs-comment">// e.g., &lt;/name&gt;</span>
+<span class="hljs-keyword">type</span> CharData []<span class="hljs-typename">byte</span>                 <span class="hljs-comment">// e.g., &lt;p&gt;CharData&lt;/p&gt;</span>
+<span class="hljs-keyword">type</span> Comment []<span class="hljs-typename">byte</span>                  <span class="hljs-comment">// e.g., &lt;!-- Comment --&gt;</span>
+
+<span class="hljs-keyword">type</span> Decoder <span class="hljs-keyword">struct</span>{ <span class="hljs-comment">/* ... */</span> }
+<span class="hljs-keyword">func</span> NewDecoder(io.Reader) *Decoder
+<span class="hljs-keyword">func</span> (*Decoder) Token() (Token, error) <span class="hljs-comment">// returns next Token in sequence</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x6CA1;&#x6709;&#x65B9;&#x6CD5;&#x7684;Token&#x63A5;&#x53E3;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x4F20;&#x7EDF;&#x7684;&#x63A5;&#x53E3;&#x5982;io.Reader&#x7684;&#x76EE;&#x7684;&#x662F;&#x9690;&#x85CF;&#x6EE1;&#x8DB3;&#x5B83;&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x7684;&#x7EC6;&#x8282;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x521B;&#x9020;&#x51FA;&#x65B0;&#x7684;&#x5B9E;&#x73B0;&#xFF1B;&#x5728;&#x8FD9;&#x4E2A;&#x5B9E;&#x73B0;&#x4E2D;&#x6BCF;&#x4E2A;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x90FD;&#x88AB;&#x7EDF;&#x4E00;&#x5730;&#x5BF9;&#x5F85;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x6EE1;&#x8DB3;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x7684;&#x96C6;&#x5408;&#x88AB;&#x8BBE;&#x8BA1;&#x786E;&#x5B9A;&#x548C;&#x66B4;&#x9732;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x9690;&#x85CF;&#x3002;&#x53EF;&#x8BC6;&#x522B;&#x7684;&#x8054;&#x5408;&#x7C7B;&#x578B;&#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x65B9;&#x6CD5;&#xFF1B;&#x64CD;&#x4F5C;&#x5B83;&#x4EEC;&#x7684;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x5F00;&#x5173;&#x7684;case&#x96C6;&#x5408;&#x6765;&#x8FDB;&#x884C;&#x8868;&#x8FF0;&#xFF1B;&#x8FD9;&#x4E2A;case&#x96C6;&#x5408;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;case&#x4E2D;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x903B;&#x8F91;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;xmlselect&#x7A0B;&#x5E8F;&#x83B7;&#x53D6;&#x548C;&#x6253;&#x5370;&#x5728;&#x4E00;&#x4E2A;XML&#x6587;&#x6863;&#x6811;&#x4E2D;&#x786E;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x4E0B;&#x627E;&#x5230;&#x7684;&#x6587;&#x672C;&#x3002;&#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x7684;API&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5728;&#x8F93;&#x5165;&#x4E0A;&#x4E00;&#x6B21;&#x5B8C;&#x6210;&#x5B83;&#x7684;&#x5DE5;&#x4F5C;&#x800C;&#x4ECE;&#x6765;&#x4E0D;&#x8981;&#x5177;&#x4F53;&#x5316;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x6811;&#x3002;</p>
+<pre><code class="lang-go">gopl.io/ch7/xmlselect
+<span class="hljs-comment">// Xmlselect prints the text of selected elements of an XML document.</span>
+<span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;encoding/xml&quot;</span>
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;io&quot;</span>
+    <span class="hljs-string">&quot;os&quot;</span>
+    <span class="hljs-string">&quot;strings&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    dec := xml.NewDecoder(os.Stdin)
+    <span class="hljs-keyword">var</span> stack []<span class="hljs-typename">string</span> <span class="hljs-comment">// stack of element names</span>
+    <span class="hljs-keyword">for</span> {
+        tok, err := dec.Token()
+        <span class="hljs-keyword">if</span> err == io.EOF {
+            <span class="hljs-keyword">break</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+            fmt.Fprintf(os.Stderr, <span class="hljs-string">&quot;xmlselect: %v\n&quot;</span>, err)
+            os.Exit(<span class="hljs-number">1</span>)
+        }
+        <span class="hljs-keyword">switch</span> tok := tok.(<span class="hljs-keyword">type</span>) {
+        <span class="hljs-keyword">case</span> xml.StartElement:
+            stack = <span class="hljs-built_in">append</span>(stack, tok.Name.Local) <span class="hljs-comment">// push</span>
+        <span class="hljs-keyword">case</span> xml.EndElement:
+            stack = stack[:<span class="hljs-built_in">len</span>(stack)-<span class="hljs-number">1</span>] <span class="hljs-comment">// pop</span>
+        <span class="hljs-keyword">case</span> xml.CharData:
+            <span class="hljs-keyword">if</span> containsAll(stack, os.Args[<span class="hljs-number">1</span>:]) {
+                fmt.Printf(<span class="hljs-string">&quot;%s: %s\n&quot;</span>, strings.Join(stack, <span class="hljs-string">&quot; &quot;</span>), tok)
+            }
+        }
+    }
+}
+
+<span class="hljs-comment">// containsAll reports whether x contains the elements of y, in order.</span>
+<span class="hljs-keyword">func</span> containsAll(x, y []<span class="hljs-typename">string</span>) <span class="hljs-typename">bool</span> {
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">len</span>(y) &lt;= <span class="hljs-built_in">len</span>(x) {
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(y) == <span class="hljs-number">0</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-constant">true</span>
+        }
+        <span class="hljs-keyword">if</span> x[<span class="hljs-number">0</span>] == y[<span class="hljs-number">0</span>] {
+            y = y[<span class="hljs-number">1</span>:]
+        }
+        x = x[<span class="hljs-number">1</span>:]
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-constant">false</span>
+}
+</code></pre>
+<p>&#x6BCF;&#x6B21;main&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x5FAA;&#x73AF;&#x9047;&#x5230;&#x4E00;&#x4E2A;StartElement&#x65F6;&#xFF0C;&#x5B83;&#x628A;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x540D;&#x79F0;&#x538B;&#x5230;&#x4E00;&#x4E2A;&#x6808;&#x91CC;&#xFF1B;&#x5E76;&#x4E14;&#x6BCF;&#x6B21;&#x9047;&#x5230;EndElement&#x65F6;&#xFF0C;&#x5B83;&#x5C06;&#x540D;&#x79F0;&#x4ECE;&#x8FD9;&#x4E2A;&#x6808;&#x4E2D;&#x63A8;&#x51FA;&#x3002;&#x8FD9;&#x4E2A;API&#x4FDD;&#x8BC1;&#x4E86;StartElement&#x548C;EndElement&#x7684;&#x5E8F;&#x5217;&#x53EF;&#x4EE5;&#x88AB;&#x5B8C;&#x5168;&#x7684;&#x5339;&#x914D;&#xFF0C;&#x751A;&#x81F3;&#x5728;&#x4E00;&#x4E2A;&#x7CDF;&#x7CD5;&#x7684;&#x6587;&#x6863;&#x683C;&#x5F0F;&#x4E2D;&#x3002;&#x6CE8;&#x91CA;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#x3002;&#x5F53;xmlselect&#x9047;&#x5230;&#x4E00;&#x4E2A;CharData&#x65F6;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x6808;&#x4E2D;&#x6709;&#x5E8F;&#x5730;&#x5305;&#x542B;&#x6240;&#x6709;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x7684;&#x5143;&#x7D20;&#x540D;&#x79F0;&#x65F6;&#x5B83;&#x624D;&#x4F1A;&#x8F93;&#x51FA;&#x76F8;&#x5E94;&#x7684;&#x6587;&#x672C;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x6253;&#x5370;&#x51FA;&#x4EFB;&#x610F;&#x51FA;&#x73B0;&#x5728;&#x4E24;&#x5C42;div&#x5143;&#x7D20;&#x4E0B;&#x7684;h2&#x5143;&#x7D20;&#x7684;&#x6587;&#x672C;&#x3002;&#x5B83;&#x7684;&#x8F93;&#x5165;&#x662F;XML&#x7684;&#x8BF4;&#x660E;&#x6587;&#x6863;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x81EA;&#x5DF1;&#x5C31;&#x662F;XML&#x6587;&#x6863;&#x683C;&#x5F0F;&#x7684;&#x3002;</p>
+<pre><code>$ go build gopl.io/ch1/fetch
+$ ./fetch http://www.w3.org/TR/2006/REC-xml11-20060816 |
+    ./xmlselect div div h2
+html body div div h2: 1 Introduction
+html body div div h2: 2 Documents
+html body div div h2: 3 Logical Structures
+html body div div h2: 4 Physical Structures
+html body div div h2: 5 Conformance
+html body div div h2: 6 Notation
+html body div div h2: A References
+html body div div h2: B Definitions for Character Normalization
+...
+</code></pre><p><strong>&#x7EC3;&#x4E60; 7.17&#xFF1A;</strong> &#x6269;&#x5C55;xmlselect&#x7A0B;&#x5E8F;&#x4EE5;&#x4FBF;&#x8BA9;&#x5143;&#x7D20;&#x4E0D;&#x4EC5;&#x4EC5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x540D;&#x79F0;&#x9009;&#x62E9;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B83;&#x4EEC;CSS&#x6837;&#x5F0F;&#x4E0A;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x9009;&#x62E9;&#xFF1B;&#x4F8B;&#x5982;&#x4E00;&#x4E2A;&#x50CF;&#x8FD9;&#x6837;<div id="page" class="wide">&#x7684;&#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5339;&#x914D;id&#x6216;&#x8005;class&#x540C;&#x65F6;&#x8FD8;&#x6709;&#x5B83;&#x7684;&#x540D;&#x79F0;&#x6765;&#x8FDB;&#x884C;&#x9009;&#x62E9;&#x3002;</div></p>
+<p><strong>&#x7EC3;&#x4E60; 7.18&#xFF1A;</strong> &#x4F7F;&#x7528;&#x57FA;&#x4E8E;&#x6807;&#x8BB0;&#x7684;&#x89E3;&#x7801;API&#xFF0C;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x4EFB;&#x610F;XML&#x6587;&#x6863;&#x548C;&#x6784;&#x9020;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x6240;&#x4EE3;&#x8868;&#x7684;&#x666E;&#x901A;&#x8282;&#x70B9;&#x6811;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x8282;&#x70B9;&#x6709;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;CharData&#x8282;&#x70B9;&#x8868;&#x793A;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x548C; Element&#x8282;&#x70B9;&#x8868;&#x793A;&#x88AB;&#x547D;&#x540D;&#x7684;&#x5143;&#x7D20;&#x548C;&#x5B83;&#x4EEC;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x70B9;&#x7684;&#x5207;&#x7247;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x80FD;&#x53D1;&#x73B0;&#x4E0B;&#x9762;&#x7684;&#x5B9A;&#x4E49;&#x4F1A;&#x5BF9;&#x4F60;&#x6709;&#x5E2E;&#x52A9;&#x3002;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;encoding/xml&quot;</span>
+
+<span class="hljs-keyword">type</span> Node <span class="hljs-keyword">interface</span>{} <span class="hljs-comment">// CharData or *Element</span>
+
+<span class="hljs-keyword">type</span> CharData <span class="hljs-typename">string</span>
+
+<span class="hljs-keyword">type</span> Element <span class="hljs-keyword">struct</span> {
+    Type     xml.Name
+    Attr     []xml.Attr
+    Children []Node
+}
+</code></pre>
 
                     
                     </section>
@@ -2112,17 +2287,9 @@
         
 <script src="../gitbook/app.js"></script>
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"katex":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

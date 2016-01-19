@@ -8,7 +8,7 @@
         <title>几点忠告 | Go语言圣经</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.2">
+        <meta name="generator" content="GitBook 2.3.0">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -22,14 +22,6 @@
     
         
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -48,20 +40,22 @@
     <body>
         
         
-    <div class="book" data-level="12.9" data-chapter-title="几点忠告" data-filepath="ch12/ch12-09.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="12.9" data-basepath=".." data-revision="Wed Jan 20 2016 00:12:20 GMT+0800 (CST)">
     
 
 <div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
-            
-            
-            
-            
+    <div class="book-search">
+        <input type="text" placeholder="輸入並搜尋" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
 
-            
+        
 
-            
+        
     
         <li class="chapter " data-level="0" data-path="index.html">
             
@@ -2058,23 +2052,95 @@
     
 
 
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    本書使用 GitBook 釋出
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                本書使用 GitBook 釋出
+            </a>
+        </li>
+        
+    </ul>
 </div>
 
     <div class="book-body">
         <div class="body-inner">
-            <div class="book-header" role="navigation">
+            <div class="book-header">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="目錄"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="搜尋"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="字型設定"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">襯線體</button>
+        <button type="button" data-font="1" class="button">無襯線體</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">白色</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">棕褐色</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">夜間</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="分享"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    分享到 Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    分享到 Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    分享到 Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    分享到 Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    分享到 Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -2083,13 +2149,13 @@
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
+            <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="129-&#x51E0;&#x70B9;&#x5FE0;&#x544A;">12.9. &#x51E0;&#x70B9;&#x5FE0;&#x544A;</h2>
+                        <h2 id="12-9-%E5%87%A0%E7%82%B9%E5%BF%A0%E5%91%8A">12.9. &#x51E0;&#x70B9;&#x5FE0;&#x544A;</h2>
 <p>&#x867D;&#x7136;&#x53CD;&#x5C04;&#x63D0;&#x4F9B;&#x7684;API&#x8FDC;&#x591A;&#x4E8E;&#x6211;&#x4EEC;&#x8BB2;&#x5230;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E3B;&#x8981;&#x662F;&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x65B9;&#x5411;&#xFF0C;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x54EA;&#x4E9B;&#x529F;&#x80FD;&#x3002;&#x53CD;&#x5C04;&#x662F;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x5E76;&#x5BCC;&#x6709;&#x8868;&#x8FBE;&#x529B;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x5E94;&#x8BE5;&#x88AB;&#x5C0F;&#x5FC3;&#x5730;&#x4F7F;&#x7528;&#xFF0C;&#x539F;&#x56E0;&#x6709;&#x4E09;&#x3002;</p>
 <p>&#x7B2C;&#x4E00;&#x4E2A;&#x539F;&#x56E0;&#x662F;&#xFF0C;&#x57FA;&#x4E8E;&#x53CD;&#x5C04;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x6BD4;&#x8F83;&#x8106;&#x5F31;&#x7684;&#x3002;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;&#x4F1A;&#x5BFC;&#x81F4;&#x7F16;&#x8BD1;&#x5668;&#x62A5;&#x544A;&#x7C7B;&#x578B;&#x9519;&#x8BEF;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5728;&#x53CD;&#x5C04;&#x4E2D;&#x90FD;&#x6709;&#x4E0E;&#x4E4B;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x662F;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x5728;&#x6784;&#x5EFA;&#x65F6;&#x9A6C;&#x4E0A;&#x62A5;&#x544A;&#x9519;&#x8BEF;&#xFF0C;&#x800C;&#x53CD;&#x5C04;&#x5219;&#x662F;&#x5728;&#x771F;&#x6B63;&#x8FD0;&#x884C;&#x5230;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x629B;&#x51FA;panic&#x5F02;&#x5E38;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x5199;&#x5B8C;&#x4EE3;&#x7801;&#x5F88;&#x4E45;&#x4E4B;&#x540E;&#x7684;&#x65F6;&#x5019;&#x4E86;&#xFF0C;&#x800C;&#x4E14;&#x7A0B;&#x5E8F;&#x4E5F;&#x53EF;&#x80FD;&#x8FD0;&#x884C;&#x4E86;&#x5F88;&#x957F;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
 <p>&#x4EE5;&#x524D;&#x9762;&#x7684;readList&#x51FD;&#x6570;&#xFF08;&#xA7;12.6&#xFF09;&#x4E3A;&#x4F8B;&#xFF0C;&#x4E3A;&#x4E86;&#x4ECE;&#x8F93;&#x5165;&#x8BFB;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x5E76;&#x586B;&#x5145;int&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x800C;&#x8C03;&#x7528;&#x7684;reflect.Value.SetString&#x65B9;&#x6CD5;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;panic&#x5F02;&#x5E38;&#x3002;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x4F7F;&#x7528;&#x53CD;&#x5C04;&#x7684;&#x7A0B;&#x5E8F;&#x90FD;&#x6709;&#x7C7B;&#x4F3C;&#x7684;&#x98CE;&#x9669;&#xFF0C;&#x9700;&#x8981;&#x975E;&#x5E38;&#x5C0F;&#x5FC3;&#x5730;&#x68C0;&#x67E5;&#x6BCF;&#x4E2A;reflect.Value&#x7684;&#x5BF9;&#x4E8E;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x3001;&#x662F;&#x5426;&#x53EF;&#x53D6;&#x5730;&#x5740;&#xFF0C;&#x8FD8;&#x6709;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x88AB;&#x4FEE;&#x6539;&#x7B49;&#x3002;</p>
@@ -2120,17 +2186,9 @@
         
 <script src="../gitbook/app.js"></script>
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"katex":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

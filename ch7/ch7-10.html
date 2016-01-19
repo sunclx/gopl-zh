@@ -8,7 +8,7 @@
         <title>类型断言 | Go语言圣经</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.2">
+        <meta name="generator" content="GitBook 2.3.0">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -22,14 +22,6 @@
     
         
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -48,20 +40,22 @@
     <body>
         
         
-    <div class="book" data-level="7.10" data-chapter-title="类型断言" data-filepath="ch7/ch7-10.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="7.10" data-basepath=".." data-revision="Wed Jan 20 2016 00:12:20 GMT+0800 (CST)">
     
 
 <div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
-            
-            
-            
-            
+    <div class="book-search">
+        <input type="text" placeholder="輸入並搜尋" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
 
-            
+        
 
-            
+        
     
         <li class="chapter " data-level="0" data-path="index.html">
             
@@ -2058,23 +2052,95 @@
     
 
 
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    本書使用 GitBook 釋出
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                本書使用 GitBook 釋出
+            </a>
+        </li>
+        
+    </ul>
 </div>
 
     <div class="book-body">
         <div class="body-inner">
-            <div class="book-header" role="navigation">
+            <div class="book-header">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="目錄"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="搜尋"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="字型設定"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">襯線體</button>
+        <button type="button" data-font="1" class="button">無襯線體</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">白色</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">棕褐色</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">夜間</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="分享"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    分享到 Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    分享到 Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    分享到 Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    分享到 Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    分享到 Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -2083,13 +2149,13 @@
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
+            <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="710-&#x7C7B;&#x578B;&#x65AD;&#x8A00;">7.10. &#x7C7B;&#x578B;&#x65AD;&#x8A00;</h2>
+                        <h2 id="7-10-%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80">7.10. &#x7C7B;&#x578B;&#x65AD;&#x8A00;</h2>
 <p>&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x662F;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x5728;&#x63A5;&#x53E3;&#x503C;&#x4E0A;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x8BED;&#x6CD5;&#x4E0A;&#x5B83;&#x770B;&#x8D77;&#x6765;&#x50CF;x.(T)&#x88AB;&#x79F0;&#x4E3A;&#x65AD;&#x8A00;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x91CC;x&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x578B;&#x548C;T&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x3002;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x68C0;&#x67E5;&#x5B83;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x7684;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x548C;&#x65AD;&#x8A00;&#x7684;&#x7C7B;&#x578B;&#x5339;&#x914D;&#x3002;</p>
 <p>&#x8FD9;&#x91CC;&#x6709;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#x3002;&#x7B2C;&#x4E00;&#x79CD;&#xFF0C;&#x5982;&#x679C;&#x65AD;&#x8A00;&#x7684;&#x7C7B;&#x578B;T&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#xFF0C;&#x7136;&#x540E;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x68C0;&#x67E5;x&#x7684;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x548C;T&#x76F8;&#x540C;&#x3002;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x68C0;&#x67E5;&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x7684;&#x7ED3;&#x679C;&#x662F;x&#x7684;&#x52A8;&#x6001;&#x503C;&#xFF0C;&#x5F53;&#x7136;&#x5B83;&#x7684;&#x7C7B;&#x578B;&#x662F;T&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x7684;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x4ECE;&#x5B83;&#x7684;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x4E2D;&#x83B7;&#x5F97;&#x5177;&#x4F53;&#x7684;&#x503C;&#x3002;&#x5982;&#x679C;&#x68C0;&#x67E5;&#x5931;&#x8D25;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x4F1A;&#x629B;&#x51FA;panic&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
 <pre><code class="lang-go"><span class="hljs-keyword">var</span> w io.Writer
@@ -2146,17 +2212,9 @@ b, ok := w.(*bytes.Buffer) <span class="hljs-comment">// failure: !ok, b == nil<
         
 <script src="../gitbook/app.js"></script>
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"katex":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
