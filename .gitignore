@@ -29,6 +29,7 @@ mkqrcode.go
 Makefile
 make.bat
 SUMMARY-github.md
+search_index.json
 
 /ch0/*.md
 /ch1/*.md
