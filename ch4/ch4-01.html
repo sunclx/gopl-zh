@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="4.1" data-chapter-title="数组" data-filepath="ch4/ch4-01.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="4.1" data-chapter-title="数组" data-filepath="ch4/ch4-01.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2146,9 +2146,8 @@ d := [<span class="hljs-number">3</span>]<span class="hljs-typename">int</span>{
 fmt.Println(a == d) <span class="hljs-comment">// compile error: cannot compare [2]int == [3]int</span>
 </code></pre>
 <p>&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x771F;&#x5B9E;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;crypto/sha256&#x5305;&#x7684;Sum256&#x51FD;&#x6570;&#x5BF9;&#x4E00;&#x4E2A;&#x4EFB;&#x610F;&#x7684;&#x5B57;&#x8282;slice&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x6D88;&#x606F;&#x6458;&#x8981;&#x3002;&#x6D88;&#x606F;&#x6458;&#x8981;&#x6709;256bit&#x5927;&#x5C0F;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x5E94;[32]byte&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x3002;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x6D88;&#x606F;&#x6458;&#x8981;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x4E24;&#x4E2A;&#x6D88;&#x606F;&#x672C;&#x8EAB;&#x4E5F;&#x662F;&#x76F8;&#x540C;&#xFF08;&#x8BD1;&#x6CE8;&#xFF1A;&#x7406;&#x8BBA;&#x4E0A;&#x6709;HASH&#x7801;&#x78B0;&#x649E;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x57FA;&#x672C;&#x5FFD;&#x7565;&#xFF09;&#xFF1B;&#x5982;&#x679C;&#x6D88;&#x606F;&#x6458;&#x8981;&#x4E0D;&#x540C;&#xFF0C;&#x90A3;&#x4E48;&#x6D88;&#x606F;&#x672C;&#x8EAB;&#x5FC5;&#x7136;&#x4E5F;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x7528;SHA256&#x7B97;&#x6CD5;&#x5206;&#x522B;&#x751F;&#x6210;&#x201C;x&#x201D;&#x548C;&#x201C;X&#x201D;&#x4E24;&#x4E2A;&#x4FE1;&#x606F;&#x7684;&#x6458;&#x8981;&#xFF1A;</p>
-<pre><code class="lang-Go">gopl.io/ch4/sha256
-
-<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;crypto/sha256&quot;</span>
+<p><u><i>gopl.io/ch4/sha256</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;crypto/sha256&quot;</span>
 
 <span class="hljs-keyword">func</span> main() {
     c1 := sha256.Sum256([]<span class="hljs-typename">byte</span>(<span class="hljs-string">&quot;x&quot;</span>))

@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="3.6" data-chapter-title="常量" data-filepath="ch3/ch3-06.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="3.6" data-chapter-title="常量" data-filepath="ch3/ch3-06.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2157,9 +2157,8 @@ fmt.Println(a, b, c, d) <span class="hljs-comment">// &quot;1 1 2 2&quot;</span>
 )
 </code></pre>
 <p>&#x968F;&#x7740;iota&#x7684;&#x9012;&#x589E;&#xFF0C;&#x6BCF;&#x4E2A;&#x5E38;&#x91CF;&#x5BF9;&#x5E94;&#x8868;&#x8FBE;&#x5F0F;1 &lt;&lt; iota&#xFF0C;&#x662F;&#x8FDE;&#x7EED;&#x7684;2&#x7684;&#x5E42;&#xFF0C;&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;bit&#x4F4D;&#x7F6E;&#x3002;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5E38;&#x91CF;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x3001;&#x8BBE;&#x7F6E;&#x6216;&#x6E05;&#x9664;&#x5BF9;&#x5E94;&#x7684;bit&#x4F4D;&#x7684;&#x503C;&#xFF1A;</p>
-<pre><code class="lang-Go">gopl.io/ch3/netflag
-
-<span class="hljs-keyword">func</span> IsUp(v Flags) <span class="hljs-typename">bool</span>     { <span class="hljs-keyword">return</span> v&amp;FlagUp == FlagUp }
+<p><u><i>gopl.io/ch3/netflag</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">func</span> IsUp(v Flags) <span class="hljs-typename">bool</span>     { <span class="hljs-keyword">return</span> v&amp;FlagUp == FlagUp }
 <span class="hljs-keyword">func</span> TurnDown(v *Flags)     { *v &amp;^= FlagUp }
 <span class="hljs-keyword">func</span> SetBroadcast(v *Flags) { *v |= FlagBroadcast }
 <span class="hljs-keyword">func</span> IsCast(v Flags) <span class="hljs-typename">bool</span>   { <span class="hljs-keyword">return</span> v&amp;(FlagBroadcast|FlagMulticast) != <span class="hljs-number">0</span> }

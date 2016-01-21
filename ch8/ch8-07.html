@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="8.7" data-chapter-title="基于select的多路复用" data-filepath="ch8/ch8-07.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="8.7" data-chapter-title="基于select的多路复用" data-filepath="ch8/ch8-07.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2091,8 +2091,8 @@
                     
                         <h2 id="87-&#x57FA;&#x4E8E;select&#x7684;&#x591A;&#x8DEF;&#x590D;&#x7528;">8.7. &#x57FA;&#x4E8E;select&#x7684;&#x591A;&#x8DEF;&#x590D;&#x7528;</h2>
 <p>&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4F1A;&#x8FDB;&#x884C;&#x706B;&#x7BAD;&#x53D1;&#x5C04;&#x7684;&#x5012;&#x8BA1;&#x65F6;&#x3002;time.Tick&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;channel&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x5468;&#x671F;&#x6027;&#x5730;&#x50CF;&#x4E00;&#x4E2A;&#x8282;&#x62CD;&#x5668;&#x4E00;&#x6837;&#x5411;&#x8FD9;&#x4E2A;channel&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x4E0D;&#x8FC7;&#x66F4;&#x6709;&#x610F;&#x601D;&#x7684;&#x662F;&#x5176;&#x4F20;&#x9001;&#x65B9;&#x5F0F;&#x3002;</p>
-<pre><code class="lang-go">gopl.io/ch8/countdown1
-<span class="hljs-keyword">func</span> main() {
+<p><u><i>gopl.io/ch8/countdown1</i></u></p>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> main() {
     fmt.Println(<span class="hljs-string">&quot;Commencing countdown.&quot;</span>)
     tick := time.Tick(<span class="hljs-number">1</span> * time.Second)
     <span class="hljs-keyword">for</span> countdown := <span class="hljs-number">10</span>; countdown &gt; <span class="hljs-number">0</span>; countdown-- {
@@ -2103,8 +2103,8 @@
 }
 </code></pre>
 <p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x8BA9;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x652F;&#x6301;&#x5728;&#x5012;&#x8BA1;&#x65F6;&#x4E2D;&#xFF0C;&#x7528;&#x6237;&#x6309;&#x4E0B;return&#x952E;&#x65F6;&#x76F4;&#x63A5;&#x4E2D;&#x65AD;&#x53D1;&#x5C04;&#x6D41;&#x7A0B;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x542F;&#x52A8;&#x4E00;&#x4E2A;goroutine&#xFF0C;&#x8FD9;&#x4E2A;goroutine&#x4F1A;&#x5C1D;&#x8BD5;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x4E2D;&#x8C03;&#x5165;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;byte&#x5E76;&#x4E14;&#xFF0C;&#x5982;&#x679C;&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x4F1A;&#x5411;&#x540D;&#x4E3A;abort&#x7684;channel&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x503C;&#x3002;</p>
-<pre><code class="lang-go">gopl.io/ch8/countdown2
-abort := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>{})
+<p><u><i>gopl.io/ch8/countdown2</i></u></p>
+<pre><code class="lang-go">abort := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>{})
 <span class="hljs-keyword">go</span> <span class="hljs-keyword">func</span>() {
     os.Stdin.Read(<span class="hljs-built_in">make</span>([]<span class="hljs-typename">byte</span>, <span class="hljs-number">1</span>)) <span class="hljs-comment">// read a single byte</span>
     abort &lt;- <span class="hljs-keyword">struct</span>{}{}
@@ -2151,8 +2151,8 @@ abort := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan
 </code></pre>
 <p>&#x5982;&#x679C;&#x591A;&#x4E2A;case&#x540C;&#x65F6;&#x5C31;&#x7EEA;&#x65F6;&#xFF0C;select&#x4F1A;&#x968F;&#x673A;&#x5730;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x6765;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E00;&#x4E2A;channel&#x90FD;&#x6709;&#x5E73;&#x7B49;&#x7684;&#x88AB;select&#x7684;&#x673A;&#x4F1A;&#x3002;&#x589E;&#x52A0;&#x524D;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;buffer&#x5927;&#x5C0F;&#x4F1A;&#x4F7F;&#x5176;&#x8F93;&#x51FA;&#x53D8;&#x5F97;&#x4E0D;&#x786E;&#x5B9A;&#xFF0C;&#x56E0;&#x4E3A;&#x5F53;buffer&#x65E2;&#x4E0D;&#x4E3A;&#x6EE1;&#x4E5F;&#x4E0D;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;select&#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x60C5;&#x51B5;&#x5C31;&#x50CF;&#x662F;&#x629B;&#x786C;&#x5E01;&#x7684;&#x884C;&#x4E3A;&#x4E00;&#x6837;&#x662F;&#x968F;&#x673A;&#x7684;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x8BA9;&#x6211;&#x4EEC;&#x7684;&#x53D1;&#x5C04;&#x7A0B;&#x5E8F;&#x6253;&#x5370;&#x5012;&#x8BA1;&#x65F6;&#x3002;&#x8FD9;&#x91CC;&#x7684;select&#x8BED;&#x53E5;&#x4F1A;&#x4F7F;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x7B49;&#x5F85;&#x4E00;&#x79D2;&#x6765;&#x6267;&#x884C;&#x9000;&#x51FA;&#x64CD;&#x4F5C;&#x3002;</p>
-<pre><code class="lang-go">gopl.io/ch8/countdown3
-<span class="hljs-keyword">func</span> main() {
+<p><u><i>gopl.io/ch8/countdown3</i></u></p>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> main() {
     <span class="hljs-comment">// ...create abort channel...</span>
 
     fmt.Println(<span class="hljs-string">&quot;Commencing countdown.  Press return to abort.&quot;</span>)

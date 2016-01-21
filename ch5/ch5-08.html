@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="5.8" data-chapter-title="Deferred函数" data-filepath="ch5/ch5-08.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="5.8" data-chapter-title="Deferred函数" data-filepath="ch5/ch5-08.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2092,8 +2092,8 @@
                         <h2 id="58-deferred&#x51FD;&#x6570;">5.8. Deferred&#x51FD;&#x6570;</h2>
 <p>&#x5728;findLinks&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7528;http.Get&#x7684;&#x8F93;&#x51FA;&#x4F5C;&#x4E3A;html.Parse&#x7684;&#x8F93;&#x5165;&#x3002;&#x53EA;&#x6709;url&#x7684;&#x5185;&#x5BB9;&#x7684;&#x786E;&#x662F;HTML&#x683C;&#x5F0F;&#x7684;&#xFF0C;html.Parse&#x624D;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;url&#x6307;&#x5411;&#x7684;&#x5185;&#x5BB9;&#x5F88;&#x4E30;&#x5BCC;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x56FE;&#x7247;&#xFF0C;&#x7EAF;&#x6587;&#x672C;&#x6216;&#x662F;&#x5176;&#x4ED6;&#x3002;&#x5C06;&#x8FD9;&#x4E9B;&#x683C;&#x5F0F;&#x7684;&#x5185;&#x5BB9;&#x4F20;&#x9012;&#x7ED9;html.parse&#xFF0C;&#x4F1A;&#x4EA7;&#x751F;&#x4E0D;&#x826F;&#x540E;&#x679C;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x83B7;&#x53D6;HTML&#x9875;&#x9762;&#x5E76;&#x8F93;&#x51FA;&#x9875;&#x9762;&#x7684;&#x6807;&#x9898;&#x3002;title&#x51FD;&#x6570;&#x4F1A;&#x68C0;&#x67E5;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;Content-Type&#x5B57;&#x6BB5;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x9875;&#x9762;&#x4E0D;&#x662F;HTML&#xFF0C;&#x5C06;&#x7EC8;&#x6B62;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x3002;</p>
-<pre><code class="lang-Go">gopl.io/ch5/title1
-<span class="hljs-keyword">func</span> title(url <span class="hljs-typename">string</span>) error {
+<p><u><i>gopl.io/ch5/title1</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">func</span> title(url <span class="hljs-typename">string</span>) error {
     resp, err := http.Get(url)
     <span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
         <span class="hljs-keyword">return</span> err
@@ -2119,19 +2119,18 @@
 }
 </code></pre>
 <p>&#x4E0B;&#x9762;&#x5C55;&#x793A;&#x4E86;&#x8FD0;&#x884C;&#x6548;&#x679C;&#xFF1A;</p>
-<pre><code class="lang-powershell">$ go build gopl.io/ch5/title1
+<pre><code>$ go build gopl.io/ch5/title1
 $ ./title1 http://gopl.io
 The Go Programming Language
 $ ./title1 https://golang.org/doc/effective_go.html
 Effective Go - The Go Programming Language
 $ ./title1 https://golang.org/doc/gopher/frontpage.png
 title: https://golang.org/doc/gopher/frontpage.png has type image/png, not text/html
-</code></pre>
-<p>resp.Body.close&#x8C03;&#x7528;&#x4E86;&#x591A;&#x6B21;&#xFF0C;&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;title&#x5728;&#x6240;&#x6709;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x4E0B;&#xFF08;&#x5373;&#x4F7F;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#x5931;&#x8D25;&#xFF09;&#x90FD;&#x5173;&#x95ED;&#x4E86;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x3002;&#x968F;&#x7740;&#x51FD;&#x6570;&#x53D8;&#x5F97;&#x590D;&#x6742;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x9519;&#x8BEF;&#x4E5F;&#x53D8;&#x591A;&#xFF0C;&#x7EF4;&#x62A4;&#x6E05;&#x7406;&#x903B;&#x8F91;&#x53D8;&#x5F97;&#x8D8A;&#x6765;&#x8D8A;&#x56F0;&#x96BE;&#x3002;&#x800C;Go&#x8BED;&#x8A00;&#x72EC;&#x6709;&#x7684;defer&#x673A;&#x5236;&#x53EF;&#x4EE5;&#x8BA9;&#x4E8B;&#x60C5;&#x53D8;&#x5F97;&#x7B80;&#x5355;&#x3002;</p>
+</code></pre><p>resp.Body.close&#x8C03;&#x7528;&#x4E86;&#x591A;&#x6B21;&#xFF0C;&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;title&#x5728;&#x6240;&#x6709;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x4E0B;&#xFF08;&#x5373;&#x4F7F;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#x5931;&#x8D25;&#xFF09;&#x90FD;&#x5173;&#x95ED;&#x4E86;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x3002;&#x968F;&#x7740;&#x51FD;&#x6570;&#x53D8;&#x5F97;&#x590D;&#x6742;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x9519;&#x8BEF;&#x4E5F;&#x53D8;&#x591A;&#xFF0C;&#x7EF4;&#x62A4;&#x6E05;&#x7406;&#x903B;&#x8F91;&#x53D8;&#x5F97;&#x8D8A;&#x6765;&#x8D8A;&#x56F0;&#x96BE;&#x3002;&#x800C;Go&#x8BED;&#x8A00;&#x72EC;&#x6709;&#x7684;defer&#x673A;&#x5236;&#x53EF;&#x4EE5;&#x8BA9;&#x4E8B;&#x60C5;&#x53D8;&#x5F97;&#x7B80;&#x5355;&#x3002;</p>
 <p>&#x4F60;&#x53EA;&#x9700;&#x8981;&#x5728;&#x8C03;&#x7528;&#x666E;&#x901A;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x524D;&#x52A0;&#x4E0A;&#x5173;&#x952E;&#x5B57;defer&#xFF0C;&#x5C31;&#x5B8C;&#x6210;&#x4E86;defer&#x6240;&#x9700;&#x8981;&#x7684;&#x8BED;&#x6CD5;&#x3002;&#x5F53;defer&#x8BED;&#x53E5;&#x88AB;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x8DDF;&#x5728;defer&#x540E;&#x9762;&#x7684;&#x51FD;&#x6570;&#x4F1A;&#x88AB;&#x5EF6;&#x8FDF;&#x6267;&#x884C;&#x3002;&#x76F4;&#x5230;&#x5305;&#x542B;&#x8BE5;defer&#x8BED;&#x53E5;&#x7684;&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x65F6;&#xFF0C;defer&#x540E;&#x7684;&#x51FD;&#x6570;&#x624D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x4E0D;&#x8BBA;&#x5305;&#x542B;defer&#x8BED;&#x53E5;&#x7684;&#x51FD;&#x6570;&#x662F;&#x901A;&#x8FC7;return&#x6B63;&#x5E38;&#x7ED3;&#x675F;&#xFF0C;&#x8FD8;&#x662F;&#x7531;&#x4E8E;panic&#x5BFC;&#x81F4;&#x7684;&#x5F02;&#x5E38;&#x7ED3;&#x675F;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E2D;&#x6267;&#x884C;&#x591A;&#x6761;defer&#x8BED;&#x53E5;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x4E0E;&#x58F0;&#x660E;&#x987A;&#x5E8F;&#x76F8;&#x53CD;&#x3002;</p>
 <p>defer&#x8BED;&#x53E5;&#x7ECF;&#x5E38;&#x88AB;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x6210;&#x5BF9;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x6253;&#x5F00;&#x3001;&#x5173;&#x95ED;&#x3001;&#x8FDE;&#x63A5;&#x3001;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x3001;&#x52A0;&#x9501;&#x3001;&#x91CA;&#x653E;&#x9501;&#x3002;&#x901A;&#x8FC7;defer&#x673A;&#x5236;&#xFF0C;&#x4E0D;&#x8BBA;&#x51FD;&#x6570;&#x903B;&#x8F91;&#x591A;&#x590D;&#x6742;&#xFF0C;&#x90FD;&#x80FD;&#x4FDD;&#x8BC1;&#x5728;&#x4EFB;&#x4F55;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x4E0B;&#xFF0C;&#x8D44;&#x6E90;&#x88AB;&#x91CA;&#x653E;&#x3002;&#x91CA;&#x653E;&#x8D44;&#x6E90;&#x7684;defer&#x5E94;&#x8BE5;&#x76F4;&#x63A5;&#x8DDF;&#x5728;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x7684;&#x8BED;&#x53E5;&#x540E;&#x3002;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x4E00;&#x6761;defer&#x8BED;&#x53E5;&#x66FF;&#x4EE3;&#x4E86;&#x4E4B;&#x524D;&#x7684;&#x6240;&#x6709;resp.Body.Close</p>
-<pre><code class="lang-Go">gopl.io/ch5/title2
-<span class="hljs-keyword">func</span> title(url <span class="hljs-typename">string</span>) error {
+<p><u><i>gopl.io/ch5/title2</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">func</span> title(url <span class="hljs-typename">string</span>) error {
     resp, err := http.Get(url)
     <span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
         <span class="hljs-keyword">return</span> err
@@ -2150,8 +2149,8 @@ title: https://golang.org/doc/gopher/frontpage.png has type image/png, not text/
 }
 </code></pre>
 <p>&#x5728;&#x5904;&#x7406;&#x5176;&#x4ED6;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x91C7;&#x7528;defer&#x673A;&#x5236;&#xFF0C;&#x6BD4;&#x5982;&#x5BF9;&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;</p>
-<pre><code class="lang-Go">io/ioutil
-<span class="hljs-keyword">package</span> ioutil
+<p><u><i>io/ioutil</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">package</span> ioutil
 <span class="hljs-keyword">func</span> ReadFile(filename <span class="hljs-typename">string</span>) ([]<span class="hljs-typename">byte</span>, error) {
     f, err := os.Open(filename)
     <span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
@@ -2171,8 +2170,8 @@ title: https://golang.org/doc/gopher/frontpage.png has type image/png, not text/
 }
 </code></pre>
 <p>&#x8C03;&#x8BD5;&#x590D;&#x6742;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;defer&#x673A;&#x5236;&#x4E5F;&#x5E38;&#x88AB;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x4F55;&#x65F6;&#x8FDB;&#x5165;&#x548C;&#x9000;&#x51FA;&#x51FD;&#x6570;&#x3002;&#x4E0B;&#x4F8B;&#x4E2D;&#x7684;bigSlowOperation&#x51FD;&#x6570;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;trace&#x8BB0;&#x5F55;&#x51FD;&#x6570;&#x7684;&#x88AB;&#x8C03;&#x60C5;&#x51B5;&#x3002;bigSlowOperation&#x88AB;&#x8C03;&#x65F6;&#xFF0C;trace&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x503C;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x503C;&#x4F1A;&#x5728;bigSlowOperation&#x9000;&#x51FA;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53EA;&#x901A;&#x8FC7;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x63A7;&#x5236;&#x51FD;&#x6570;&#x7684;&#x5165;&#x53E3;&#x548C;&#x6240;&#x6709;&#x7684;&#x51FA;&#x53E3;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x8BB0;&#x5F55;&#x51FD;&#x6570;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;start&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4E00;&#x70B9;&#xFF1A;&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;defer&#x8BED;&#x53E5;&#x540E;&#x7684;&#x5706;&#x62EC;&#x53F7;&#xFF0C;&#x5426;&#x5219;&#x672C;&#x8BE5;&#x5728;&#x8FDB;&#x5165;&#x65F6;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x4F1A;&#x5728;&#x9000;&#x51FA;&#x65F6;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x672C;&#x8BE5;&#x5728;&#x9000;&#x51FA;&#x65F6;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x3002;</p>
-<pre><code class="lang-Go">gopl.io/ch5/trace
-<span class="hljs-keyword">func</span> bigSlowOperation() {
+<p><u><i>gopl.io/ch5/trace</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">func</span> bigSlowOperation() {
     <span class="hljs-keyword">defer</span> trace(<span class="hljs-string">&quot;bigSlowOperation&quot;</span>)() <span class="hljs-comment">// don&apos;t forget the</span>
     extra parentheses
     <span class="hljs-comment">// ...lots of work&#x2026;</span>
@@ -2242,8 +2241,8 @@ fmt.Println(triple(<span class="hljs-number">4</span>)) <span class="hljs-commen
 }
 </code></pre>
 <p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x662F;fetch&#xFF08;1.5&#x8282;&#xFF09;&#x7684;&#x6539;&#x8FDB;&#x7248;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;http&#x54CD;&#x5E94;&#x4FE1;&#x606F;&#x5199;&#x5165;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x800C;&#x4E0D;&#x662F;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x6D41;&#x8F93;&#x51FA;&#x3002;&#x6211;&#x4EEC;&#x901A;&#x8FC7;path.Base&#x63D0;&#x51FA;url&#x8DEF;&#x5F84;&#x7684;&#x6700;&#x540E;&#x4E00;&#x6BB5;&#x4F5C;&#x4E3A;&#x6587;&#x4EF6;&#x540D;&#x3002;</p>
-<pre><code class="lang-Go">gopl.io/ch5/fetch
-<span class="hljs-comment">// Fetch downloads the URL and returns the</span>
+<p><u><i>gopl.io/ch5/fetch</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-comment">// Fetch downloads the URL and returns the</span>
 <span class="hljs-comment">// name and length of the local file.</span>
 <span class="hljs-keyword">func</span> fetch(url <span class="hljs-typename">string</span>) (filename <span class="hljs-typename">string</span>, n <span class="hljs-typename">int64</span>, err error) {
     resp, err := http.Get(url)
@@ -2267,7 +2266,7 @@ fmt.Println(triple(<span class="hljs-number">4</span>)) <span class="hljs-commen
     <span class="hljs-keyword">return</span> local, n, err
 }
 </code></pre>
-<p>&#x5BF9;resp.Body.Close&#x5EF6;&#x8FDF;&#x8C03;&#x7528;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x89C1;&#x8FC7;&#x4E86;&#xFF0C;&#x5728;&#x6B64;&#x4E0D;&#x505A;&#x89E3;&#x91CA;&#x3002;&#x4E0A;&#x4F8B;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;os.Create&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x5199;&#x5165;&#xFF0C;&#x5728;&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x5BF9;f.close&#x91C7;&#x7528;defer&#x673A;&#x5236;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E9B;&#x5FAE;&#x5999;&#x7684;&#x9519;&#x8BEF;&#x3002;&#x8BB8;&#x591A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x5C24;&#x5176;&#x662F;NFS&#xFF0C;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x65F6;&#x53D1;&#x751F;&#x7684;&#x9519;&#x8BEF;&#x4F1A;&#x88AB;&#x5EF6;&#x8FDF;&#x5230;&#x6587;&#x4EF6;&#x5173;&#x95ED;&#x65F6;&#x53CD;&#x9988;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x68C0;&#x67E5;&#x6587;&#x4EF6;&#x5173;&#x95ED;&#x65F6;&#x7684;&#x53CD;&#x9988;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x4E22;&#x5931;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x8FD8;&#x8BEF;&#x4EE5;&#x4E3A;&#x5199;&#x5165;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x3002;&#x5982;&#x679C;io.Copy&#x548C;f.close&#x90FD;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x503E;&#x5411;&#x4E8E;&#x5C06;io.Copy&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x53CD;&#x9988;&#x7ED9;&#x8C03;&#x7528;&#x8005;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5148;&#x4E8E;f,close&#x53D1;&#x751F;&#xFF0C;&#x66F4;&#x6709;&#x53EF;&#x80FD;&#x63A5;&#x8FD1;&#x95EE;&#x9898;&#x7684;&#x672C;&#x8D28;&#x3002;</p>
+<p>&#x5BF9;resp.Body.Close&#x5EF6;&#x8FDF;&#x8C03;&#x7528;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x89C1;&#x8FC7;&#x4E86;&#xFF0C;&#x5728;&#x6B64;&#x4E0D;&#x505A;&#x89E3;&#x91CA;&#x3002;&#x4E0A;&#x4F8B;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;os.Create&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x5199;&#x5165;&#xFF0C;&#x5728;&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x5BF9;f.close&#x91C7;&#x7528;defer&#x673A;&#x5236;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E9B;&#x5FAE;&#x5999;&#x7684;&#x9519;&#x8BEF;&#x3002;&#x8BB8;&#x591A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x5C24;&#x5176;&#x662F;NFS&#xFF0C;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x65F6;&#x53D1;&#x751F;&#x7684;&#x9519;&#x8BEF;&#x4F1A;&#x88AB;&#x5EF6;&#x8FDF;&#x5230;&#x6587;&#x4EF6;&#x5173;&#x95ED;&#x65F6;&#x53CD;&#x9988;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x68C0;&#x67E5;&#x6587;&#x4EF6;&#x5173;&#x95ED;&#x65F6;&#x7684;&#x53CD;&#x9988;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x4E22;&#x5931;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x8FD8;&#x8BEF;&#x4EE5;&#x4E3A;&#x5199;&#x5165;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x3002;&#x5982;&#x679C;io.Copy&#x548C;f.close&#x90FD;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x503E;&#x5411;&#x4E8E;&#x5C06;io.Copy&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x53CD;&#x9988;&#x7ED9;&#x8C03;&#x7528;&#x8005;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5148;&#x4E8E;f.close&#x53D1;&#x751F;&#xFF0C;&#x66F4;&#x6709;&#x53EF;&#x80FD;&#x63A5;&#x8FD1;&#x95EE;&#x9898;&#x7684;&#x672C;&#x8D28;&#x3002;</p>
 <p><strong>&#x7EC3;&#x4E60;5.18&#xFF1A;</strong>&#x4E0D;&#x4FEE;&#x6539;fetch&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x91CD;&#x5199;fetch&#x51FD;&#x6570;&#xFF0C;&#x8981;&#x6C42;&#x4F7F;&#x7528;defer&#x673A;&#x5236;&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x3002;</p>
 
                     

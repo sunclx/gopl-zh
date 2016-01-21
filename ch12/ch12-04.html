@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="12.4" data-chapter-title="示例: 编码S表达式" data-filepath="ch12/ch12-04.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="12.4" data-chapter-title="示例: 编码S表达式" data-filepath="ch12/ch12-04.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2101,9 +2101,8 @@ foo         symbol (an unquoted name)
 <p>&#x6211;&#x4EEC;&#x5C06;Go&#x8BED;&#x8A00;&#x7684;&#x7C7B;&#x578B;&#x7F16;&#x7801;&#x4E3A;S&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#x3002;&#x6574;&#x6570;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x4EE5;&#x81EA;&#x7136;&#x7684;&#x65B9;&#x5F0F;&#x7F16;&#x7801;&#x3002;Nil&#x503C;&#x7F16;&#x7801;&#x4E3A;nil&#x7B26;&#x53F7;&#x3002;&#x6570;&#x7EC4;&#x548C;slice&#x88AB;&#x7F16;&#x7801;&#x4E3A;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x3002;</p>
 <p>&#x7ED3;&#x6784;&#x4F53;&#x88AB;&#x7F16;&#x7801;&#x4E3A;&#x6210;&#x5458;&#x5BF9;&#x8C61;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x6BCF;&#x4E2A;&#x6210;&#x5458;&#x5BF9;&#x8C61;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x4E2A;&#x4EC5;&#x6709;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5B50;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x5B50;&#x5217;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x6210;&#x5458;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5B50;&#x5217;&#x8868;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x6210;&#x5458;&#x7684;&#x503C;&#x3002;Map&#x88AB;&#x7F16;&#x7801;&#x4E3A;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x5217;&#x8868;&#x3002;&#x4F20;&#x7EDF;&#x4E0A;&#xFF0C;S&#x8868;&#x8FBE;&#x5F0F;&#x4F7F;&#x7528;&#x70B9;&#x72B6;&#x7B26;&#x53F7;&#x5217;&#x8868;(key . value)&#x7ED3;&#x6784;&#x6765;&#x8868;&#x793A;key/value&#x5BF9;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7528;&#x4E00;&#x4E2A;&#x542B;&#x53CC;&#x5143;&#x7D20;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E3A;&#x4E86;&#x7B80;&#x5355;&#x6211;&#x4EEC;&#x5FFD;&#x7565;&#x4E86;&#x70B9;&#x72B6;&#x7B26;&#x53F7;&#x5217;&#x8868;&#x3002;</p>
 <p>&#x7F16;&#x7801;&#x662F;&#x7531;&#x4E00;&#x4E2A;encode&#x9012;&#x5F52;&#x51FD;&#x6570;&#x5B8C;&#x6210;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;&#x5B83;&#x7684;&#x7ED3;&#x6784;&#x672C;&#x8D28;&#x4E0A;&#x548C;&#x524D;&#x9762;&#x7684;Display&#x51FD;&#x6570;&#x7C7B;&#x4F3C;&#xFF1A;</p>
-<pre><code class="lang-Go">gopl.io/ch12/sexpr
-
-<span class="hljs-keyword">func</span> encode(buf *bytes.Buffer, v reflect.Value) error {
+<p><u><i>gopl.io/ch12/sexpr</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">func</span> encode(buf *bytes.Buffer, v reflect.Value) error {
     <span class="hljs-keyword">switch</span> v.Kind() {
     <span class="hljs-keyword">case</span> reflect.Invalid:
         buf.WriteString(<span class="hljs-string">&quot;nil&quot;</span>)

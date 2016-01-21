@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="12.3" data-chapter-title="Display递归打印" data-filepath="ch12/ch12-03.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="12.3" data-chapter-title="Display递归打印" data-filepath="ch12/ch12-03.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2105,9 +2105,8 @@ e.args[<span class="hljs-number">0</span>].value.y.<span class="hljs-keyword">ty
 e.args[<span class="hljs-number">0</span>].value.y.value = <span class="hljs-string">&quot;pi&quot;</span>
 </code></pre>
 <p>&#x5728;&#x53EF;&#x80FD;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x5728;&#x4E00;&#x4E2A;&#x5305;&#x4E2D;&#x66B4;&#x9732;&#x548C;&#x53CD;&#x5C04;&#x76F8;&#x5173;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x672A;&#x5BFC;&#x51FA;&#x7684;display&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x9012;&#x5F52;&#x5904;&#x7406;&#x5DE5;&#x4F5C;&#xFF0C;&#x5BFC;&#x51FA;&#x7684;&#x662F;Display&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x53EA;&#x662F;display&#x51FD;&#x6570;&#x7B80;&#x5355;&#x7684;&#x5305;&#x88C5;&#x4EE5;&#x63A5;&#x53D7;interface{}&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF1A;</p>
-<pre><code class="lang-Go">gopl.io/ch12/display
-
-<span class="hljs-keyword">func</span> Display(name <span class="hljs-typename">string</span>, x <span class="hljs-keyword">interface</span>{}) {
+<p><u><i>gopl.io/ch12/display</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">func</span> Display(name <span class="hljs-typename">string</span>, x <span class="hljs-keyword">interface</span>{}) {
     fmt.Printf(<span class="hljs-string">&quot;Display %s (%T):\n&quot;</span>, name, x)
     display(name, reflect.ValueOf(x))
 }

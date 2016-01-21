@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="6.3" data-chapter-title="通过嵌入结构体来扩展类型" data-filepath="ch6/ch6-03.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="6.3" data-chapter-title="通过嵌入结构体来扩展类型" data-filepath="ch6/ch6-03.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2091,9 +2091,11 @@
                     
                         <h2 id="63-&#x901A;&#x8FC7;&#x5D4C;&#x5165;&#x7ED3;&#x6784;&#x4F53;&#x6765;&#x6269;&#x5C55;&#x7C7B;&#x578B;">6.3. &#x901A;&#x8FC7;&#x5D4C;&#x5165;&#x7ED3;&#x6784;&#x4F53;&#x6765;&#x6269;&#x5C55;&#x7C7B;&#x578B;</h2>
 <p>&#x6765;&#x770B;&#x770B;ColoredPoint&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#xFF1A;</p>
-<pre><code class="lang-go">gopl.io/ch6/coloredpoint
-<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;image/color&quot;</span>
+<p><u><i>gopl.io/ch6/coloredpoint</i></u></p>
+<pre><code class="lang-go"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;image/color&quot;</span>
+
 <span class="hljs-keyword">type</span> Point <span class="hljs-keyword">struct</span>{ X, Y <span class="hljs-typename">float64</span> }
+
 <span class="hljs-keyword">type</span> ColoredPoint <span class="hljs-keyword">struct</span> {
     Point
     Color color.RGBA

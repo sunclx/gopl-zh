@@ -2,11 +2,12 @@
 
 Go語言聖經 [《The Go Programming Language》](http://gopl.io) 中文版本，僅供學習交流之用。
 
-- 在線預覽：http://golang-china.github.io/gopl-zh
-- 離線版本：http://github.com/golang-china/gopl-zh/archive/gh-pages.zip
-- 原版官網：http://gopl.io
-
 [![](cover_middle.jpg)](https://github.com/golang-china/gopl-zh)
+
+- 在線版本：http://golang-china.github.io/gopl-zh
+- 離線版本：http://github.com/golang-china/gopl-zh/archive/gh-pages.zip
+- 項目主頁：http://github.com/golang-china/gopl-zh
+- 原版官網：http://gopl.io
 
 
 ### 從源文件構建
@@ -25,10 +26,6 @@ Go語言聖經 [《The Go Programming Language》](http://gopl.io) 中文版本�
 - `make zh2tw` 或 `go run zh2tw.go . "\.md$" zh2tw`，轉繁體。
 - `make tw2zh` 或 `go run zh2tw.go . "\.md$" tw2zh`，轉簡體。
 
-### Markdown 格式預覽
-
-- [SUMMARY-github.md](SUMMARY-github.md)
-
 # 版權聲明
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>。
@@ -38,4 +35,3 @@ Go語言聖經 [《The Go Programming Language》](http://gopl.io) 中文版本�
 嚴禁任何商業行爲使用或引用該文檔的全部或部分內容！
 
 歡迎大家提供建議！
-

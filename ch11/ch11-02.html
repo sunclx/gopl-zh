@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="11.2" data-chapter-title="测试函数" data-filepath="ch11/ch11-02.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="11.2" data-chapter-title="测试函数" data-filepath="ch11/ch11-02.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2101,8 +2101,8 @@
 <span class="hljs-keyword">func</span> TestLog(t *testing.T) { <span class="hljs-comment">/* ... */</span> }
 </code></pre>
 <p>&#x5176;&#x4E2D; t &#x53C2;&#x6570;&#x7528;&#x4E8E;&#x62A5;&#x544A;&#x6D4B;&#x8BD5;&#x5931;&#x8D25;&#x548C;&#x9644;&#x4EF6;&#x7684;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;. &#x8BA9;&#x6211;&#x4EEC;&#x9876;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5305; gopl.io/ch11/word1, &#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x51FD;&#x6570; IsPalindrome &#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4ECE;&#x524D;&#x5411;&#x540E;&#x548C;&#x4ECE;&#x540E;&#x5411;&#x524D;&#x8BFB;&#x90FD;&#x4E00;&#x6837;. (&#x8FD9;&#x4E2A;&#x5B9E;&#x73B0;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x662F;&#x56DE;&#x6587;&#x5B57;&#x7B26;&#x4E32;&#x524D;&#x540E;&#x91CD;&#x590D;&#x6D4B;&#x8BD5;&#x4E86;&#x4E24;&#x6B21;; &#x6211;&#x4EEC;&#x7A0D;&#x540E;&#x4F1A;&#x518D;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;.)</p>
-<pre><code class="lang-Go">gopl.io/ch11/word1
-<span class="hljs-comment">// Package word provides utilities for word games.</span>
+<p><u><i>gopl.io/ch11/word1</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-comment">// Package word provides utilities for word games.</span>
 <span class="hljs-keyword">package</span> word
 
 <span class="hljs-comment">// IsPalindrome reports whether s reads the same forward and backward.</span>
@@ -2194,8 +2194,8 @@ FAIL    gopl.io/ch11/word1  0.014s
 </code></pre><p>&#x5F53;&#x7136;, &#x4E00;&#x65E6;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4FEE;&#x590D;&#x4E86;&#x5931;&#x8D25;&#x7684;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;, &#x5728;&#x6211;&#x4EEC;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x66F4;&#x65B0;&#x4E4B;&#x524D;, &#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x4EE5;&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#x7684; <code>go test</code> &#x547D;&#x4EE4;&#x8FD0;&#x884C;&#x5168;&#x90E8;&#x7684;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;, &#x4EE5;&#x786E;&#x4FDD;&#x66F4;&#x65B0;&#x6CA1;&#x6709;&#x5F15;&#x5165;&#x65B0;&#x7684;&#x95EE;&#x9898;.</p>
 <p>&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x7684;&#x4EFB;&#x52A1;&#x5C31;&#x662F;&#x4FEE;&#x590D;&#x8FD9;&#x4E9B;&#x9519;&#x8BEF;. &#x7B80;&#x8981;&#x5206;&#x6790;&#x540E;&#x53D1;&#x73B0;&#x7B2C;&#x4E00;&#x4E2A;BUG&#x7684;&#x539F;&#x56E0;&#x662F;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x4E86; byte &#x800C;&#x4E0D;&#x662F; rune &#x5E8F;&#x5217;, &#x6240;&#x4EE5;&#x50CF; &quot;&#xE9;t&#xE9;&quot; &#x4E2D;&#x7684; &#xE9; &#x7B49;&#x975E; ASCII &#x5B57;&#x7B26;&#x4E0D;&#x80FD;&#x6B63;&#x786E;&#x5904;&#x7406;. &#x7B2C;&#x4E8C;&#x4E2A;BUG&#x662F;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x5FFD;&#x7565;&#x7A7A;&#x683C;&#x548C;&#x5B57;&#x6BCD;&#x7684;&#x5927;&#x5C0F;&#x5199;&#x5BFC;&#x81F4;&#x7684;.</p>
 <p>&#x9488;&#x5BF9;&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;BUG, &#x6211;&#x4EEC;&#x4ED4;&#x7EC6;&#x91CD;&#x5199;&#x4E86;&#x51FD;&#x6570;:</p>
-<pre><code class="lang-Go">gopl.io/ch11/word2
-<span class="hljs-comment">// Package word provides utilities for word games.</span>
+<p><u><i>gopl.io/ch11/word2</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-comment">// Package word provides utilities for word games.</span>
 <span class="hljs-keyword">package</span> word
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">&quot;unicode&quot;</span>
@@ -2294,8 +2294,8 @@ ok      gopl.io/ch11/word2      0.015s
 <h3 id="1122-&#x6D4B;&#x8BD5;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;">11.2.2. &#x6D4B;&#x8BD5;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;</h3>
 <p>&#x5BF9;&#x4E8E;&#x6D4B;&#x8BD5;&#x5305; <code>go test</code> &#x662F;&#x4E00;&#x4E2A;&#x7684;&#x6709;&#x7528;&#x7684;&#x5DE5;&#x5177;, &#x4F46;&#x662F;&#x7A0D;&#x52A0;&#x52AA;&#x529B;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5B83;&#x6765;&#x6D4B;&#x8BD5;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;. &#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5305;&#x7684;&#x540D;&#x5B57;&#x662F; main, &#x90A3;&#x4E48;&#x5728;&#x6784;&#x5EFA;&#x65F6;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;, &#x4E0D;&#x8FC7; main &#x5305;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5305;&#x88AB;&#x6D4B;&#x8BD5;&#x5668;&#x4EE3;&#x7801;&#x5BFC;&#x5165;.</p>
 <p>&#x8BA9;&#x6211;&#x4EEC;&#x4E3A; 2.3.2&#x8282; &#x7684; echo &#x7A0B;&#x5E8F;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;. &#x6211;&#x4EEC;&#x5148;&#x5C06;&#x7A0B;&#x5E8F;&#x62C6;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x51FD;&#x6570;: echo &#x51FD;&#x6570;&#x5B8C;&#x6210;&#x771F;&#x6B63;&#x7684;&#x5DE5;&#x4F5C;, main &#x51FD;&#x6570;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x548C;echo&#x53EF;&#x80FD;&#x8FD4;&#x56DE;&#x7684;&#x9519;&#x8BEF;.</p>
-<pre><code class="lang-Go">gopl.io/ch11/echo
-<span class="hljs-comment">// Echo prints its command-line arguments.</span>
+<p><u><i>gopl.io/ch11/echo</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-comment">// Echo prints its command-line arguments.</span>
 <span class="hljs-keyword">package</span> main
 
 <span class="hljs-keyword">import</span> (
@@ -2385,9 +2385,8 @@ FAIL        gopl.io/ch11/echo         0.006s
 <p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x770B;&#x5230;&#x4E24;&#x79CD;&#x6D4B;&#x8BD5;&#x7684;&#x4F8B;&#x5B50;. TestIsPalindrome &#x6D4B;&#x8BD5;&#x4EC5;&#x4EC5;&#x4F7F;&#x7528;&#x5BFC;&#x51FA;&#x7684; IsPalindrome &#x51FD;&#x6570;, &#x56E0;&#x6B64;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x9ED1;&#x76D2;&#x6D4B;&#x8BD5;. TestEcho &#x6D4B;&#x8BD5;&#x5219;&#x8C03;&#x7528;&#x4E86;&#x5185;&#x90E8;&#x7684; echo &#x51FD;&#x6570;, &#x5E76;&#x4E14;&#x66F4;&#x65B0;&#x4E86;&#x5185;&#x90E8;&#x7684; out &#x5168;&#x5C40;&#x53D8;&#x91CF;, &#x8FD9;&#x4E24;&#x4E2A;&#x90FD;&#x662F;&#x672A;&#x5BFC;&#x51FA;&#x7684;, &#x56E0;&#x6B64;&#x5B83;&#x662F;&#x767D;&#x76D2;&#x6D4B;&#x8BD5;.</p>
 <p>&#x5F53;&#x6211;&#x4EEC;&#x5F00;&#x53D1;TestEcho&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;, &#x6211;&#x4EEC;&#x4FEE;&#x6539;&#x4E86; echo &#x51FD;&#x6570;&#x4F7F;&#x7528;&#x5305;&#x7EA7;&#x7684; out &#x4F5C;&#x4E3A;&#x8F93;&#x51FA;&#x5BF9;&#x8C61;, &#x56E0;&#x6B64;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4EE3;&#x66FF;&#x6807;&#x51C6;&#x8F93;&#x51FA;, &#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5BF9;&#x6BD4; echo &#x7684;&#x8F93;&#x51FA;&#x6570;&#x636E;. &#x4F7F;&#x7528;&#x7C7B;&#x4F3C;&#x7684;&#x6280;&#x672F;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x4EA7;&#x54C1;&#x4EE3;&#x7801;&#x7684;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x4E5F;&#x66FF;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x5BB9;&#x6613;&#x6D4B;&#x8BD5;&#x7684;&#x4F2A;&#x5BF9;&#x8C61;. &#x4F7F;&#x7528;&#x4F2A;&#x5BF9;&#x8C61;&#x7684;&#x597D;&#x5904;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x914D;&#x7F6E;, &#x5BB9;&#x6613;&#x9884;&#x6D4B;, &#x66F4;&#x53EF;&#x9760;, &#x4E5F;&#x66F4;&#x5BB9;&#x6613;&#x89C2;&#x5BDF;. &#x540C;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x4E00;&#x4E9B;&#x4E0D;&#x826F;&#x7684;&#x526F;&#x4F5C;&#x7528;, &#x4F8B;&#x5982;&#x66F4;&#x65B0;&#x751F;&#x4EA7;&#x6570;&#x636E;&#x5E93;&#x6216;&#x4FE1;&#x7528;&#x5361;&#x6D88;&#x8D39;&#x884C;&#x4E3A;.</p>
 <p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x7F51;&#x7EDC;&#x5B58;&#x50A8;&#x7684;web&#x670D;&#x52A1;&#x4E2D;&#x7684;&#x914D;&#x989D;&#x68C0;&#x6D4B;&#x903B;&#x8F91;. &#x5F53;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x4E86;&#x8D85;&#x8FC7; 90% &#x7684;&#x5B58;&#x50A8;&#x914D;&#x989D;&#x4E4B;&#x540E;&#x5C06;&#x53D1;&#x9001;&#x63D0;&#x9192;&#x90AE;&#x4EF6;.</p>
-<pre><code class="lang-Go">gopl.io/ch11/storage1
-
-<span class="hljs-keyword">package</span> storage
+<p><u><i>gopl.io/ch11/storage1</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">package</span> storage
 
 <span class="hljs-keyword">import</span> (
     <span class="hljs-string">&quot;fmt&quot;</span>
@@ -2423,9 +2422,8 @@ FAIL        gopl.io/ch11/echo         0.006s
 }
 </code></pre>
 <p>&#x6211;&#x4EEC;&#x60F3;&#x6D4B;&#x8BD5;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;, &#x4F46;&#x662F;&#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x5E0C;&#x671B;&#x53D1;&#x9001;&#x771F;&#x5B9E;&#x7684;&#x90AE;&#x4EF6;. &#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5C06;&#x90AE;&#x4EF6;&#x5904;&#x7406;&#x903B;&#x8F91;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x79C1;&#x6709;&#x7684; notifyUser &#x51FD;&#x6570;.</p>
-<pre><code class="lang-Go">gopl.io/ch11/storage2
-
-<span class="hljs-keyword">var</span> notifyUser = <span class="hljs-keyword">func</span>(username, msg <span class="hljs-typename">string</span>) {
+<p><u><i>gopl.io/ch11/storage2</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">var</span> notifyUser = <span class="hljs-keyword">func</span>(username, msg <span class="hljs-typename">string</span>) {
     auth := smtp.PlainAuth(<span class="hljs-string">&quot;&quot;</span>, sender, password, hostname)
     err := smtp.SendMail(hostname+<span class="hljs-string">&quot;:587&quot;</span>, auth, sender,
         []<span class="hljs-typename">string</span>{username}, []<span class="hljs-typename">byte</span>(msg))

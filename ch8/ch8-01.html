@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="8.1" data-chapter-title="Goroutines" data-filepath="ch8/ch8-01.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="8.1" data-chapter-title="Goroutines" data-filepath="ch8/ch8-01.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2097,8 +2097,8 @@
 <span class="hljs-keyword">go</span> f() <span class="hljs-comment">// create a new goroutine that calls f(); don&apos;t wait</span>
 </code></pre>
 <p>&#x5728;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;main goroutine&#x4F1A;&#x8BA1;&#x7B97;&#x7B2C;45&#x4E2A;&#x83F2;&#x6CE2;&#x90A3;&#x5951;&#x6570;&#x3002;&#x7531;&#x4E8E;&#x8BA1;&#x7B97;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x4E86;&#x6548;&#x7387;&#x975E;&#x5E38;&#x4F4E;&#x7684;&#x9012;&#x5F52;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x8FD0;&#x884C;&#x76F8;&#x5F53;&#x53EF;&#x89C2;&#x7684;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF0C;&#x5728;&#x8FD9;&#x671F;&#x95F4;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x8BA9;&#x7528;&#x6237;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x89C1;&#x7684;&#x6807;&#x8BC6;&#x6765;&#x8868;&#x660E;&#x7A0B;&#x5E8F;&#x4F9D;&#x7136;&#x5728;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#x7684;&#x5C0F;&#x56FE;&#x6807;&#xFF1A;</p>
-<pre><code class="lang-go">gopl.io/ch8/spinner
-<span class="hljs-keyword">func</span> main() {
+<p><u><i>gopl.io/ch8/spinner</i><u></u></u></p>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> main() {
     <span class="hljs-keyword">go</span> spinner(<span class="hljs-number">100</span> * time.Millisecond)
     <span class="hljs-keyword">const</span> n = <span class="hljs-number">45</span>
     fibN := fib(n) <span class="hljs-comment">// slow</span>

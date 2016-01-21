@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="13.4" data-chapter-title="通过cgo调用C代码" data-filepath="ch13/ch13-04.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="13.4" data-chapter-title="通过cgo调用C代码" data-filepath="ch13/ch13-04.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2119,9 +2119,8 @@
 </code></pre>
 <p>&#x8981;&#x4F7F;&#x7528;libbzip2&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5148;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;bz_stream&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x7528;&#x4E8E;&#x4FDD;&#x6301;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x7F13;&#x5B58;&#x3002;&#x7136;&#x540E;&#x6709;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#xFF1A;BZ2_bzCompressInit&#x7528;&#x4E8E;&#x521D;&#x59CB;&#x5316;&#x7F13;&#x5B58;&#xFF0C;BZ2_bzCompress&#x7528;&#x4E8E;&#x5C06;&#x8F93;&#x5165;&#x7F13;&#x5B58;&#x7684;&#x6570;&#x636E;&#x538B;&#x7F29;&#x5230;&#x8F93;&#x51FA;&#x7F13;&#x5B58;&#xFF0C;BZ2_bzCompressEnd&#x7528;&#x4E8E;&#x91CA;&#x653E;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x7F13;&#x5B58;&#x3002;&#xFF08;&#x76EE;&#x524D;&#x4E0D;&#x8981;&#x62C5;&#x5FC3;&#x5305;&#x7684;&#x5177;&#x4F53;&#x7ED3;&#x6784;, &#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x6F14;&#x793A;&#x5404;&#x4E2A;&#x90E8;&#x5206;&#x5982;&#x4F55;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x3002;&#xFF09;</p>
 <p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;Go&#x4EE3;&#x7801;&#x4E2D;&#x76F4;&#x63A5;&#x8C03;&#x7528;BZ2_bzCompressInit&#x548C;BZ2_bzCompressEnd&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;BZ2_bzCompress&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;C&#x8BED;&#x8A00;&#x7684;&#x5305;&#x88C5;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x5B83;&#x5B8C;&#x6210;&#x771F;&#x6B63;&#x7684;&#x5DE5;&#x4F5C;&#x3002;&#x4E0B;&#x9762;&#x662F;C&#x4EE3;&#x7801;&#xFF0C;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
-<pre><code class="lang-C">gopl.io/ch13/bzip
-
-<span class="hljs-comment">/* This file is gopl.io/ch13/bzip/bzip2.c,         */</span>
+<p><u><i>gopl.io/ch13/bzip</i></u></p>
+<pre><code class="lang-C"><span class="hljs-comment">/* This file is gopl.io/ch13/bzip/bzip2.c,         */</span>
 <span class="hljs-comment">/* a simple wrapper for libbzip2 suitable for cgo. */</span>
 <span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bzlib.h&gt;</span></span>
 
@@ -2228,9 +2227,8 @@ void bz2free(bz_stream* s) { free(s); }
 <p>&#x538B;&#x7F29;&#x5B8C;&#x6210;&#x540E;&#xFF0C;Close&#x65B9;&#x6CD5;&#x7528;&#x4E86;defer&#x51FD;&#x6570;&#x786E;&#x4FDD;&#x51FD;&#x6570;&#x9000;&#x51FA;&#x524D;&#x8C03;&#x7528;C.BZ2_bzCompressEnd&#x548C;C.bz2free&#x91CA;&#x653E;&#x76F8;&#x5173;&#x7684;C&#x8BED;&#x8A00;&#x8FD0;&#x884C;&#x65F6;&#x8D44;&#x6E90;&#x3002;&#x6B64;&#x523B;w.stream&#x6307;&#x9488;&#x5C06;&#x4E0D;&#x518D;&#x6709;&#x6548;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B83;&#x8BBE;&#x7F6E;&#x4E3A;nil&#x4EE5;&#x4FDD;&#x8BC1;&#x5B89;&#x5168;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x589E;&#x52A0;&#x4E86;nil&#x68C0;&#x6D4B;&#xFF0C;&#x4EE5;&#x9632;&#x6B62;&#x7528;&#x6237;&#x5728;&#x5173;&#x95ED;&#x540E;&#x4F9D;&#x7136;&#x9519;&#x8BEF;&#x4F7F;&#x7528;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#x3002;</p>
 <p>&#x4E0A;&#x9762;&#x7684;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x4E0D;&#x4EC5;&#x4EC5;&#x5199;&#x662F;&#x975E;&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x751A;&#x81F3;&#x5E76;&#x53D1;&#x8C03;&#x7528;Close&#x548C;Write&#x65B9;&#x6CD5;&#x4E5F;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x7684;&#x7684;&#x5D29;&#x6E83;&#x3002;&#x4FEE;&#x590D;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#x7EC3;&#x4E60;13.3&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x7684;bzipper&#x7A0B;&#x5E8F;&#xFF0C;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x5305;&#x5B9E;&#x73B0;&#x7684;bzip2&#x538B;&#x7F29;&#x547D;&#x4EE4;&#x3002;&#x5B83;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x8BB8;&#x591A;Unix&#x7CFB;&#x7EDF;&#x7684;bzip2&#x547D;&#x4EE4;&#x7C7B;&#x4F3C;&#x3002;</p>
-<pre><code class="lang-Go">gopl.io/ch13/bzipper
-
-<span class="hljs-comment">// Bzipper reads input, bzip2-compresses it, and writes it out.</span>
+<p><u><i>gopl.io/ch13/bzipper</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-comment">// Bzipper reads input, bzip2-compresses it, and writes it out.</span>
 <span class="hljs-keyword">package</span> main
 
 <span class="hljs-keyword">import</span> (

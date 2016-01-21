@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="2.3" data-chapter-title="变量" data-filepath="ch2/ch2-03.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="2.3" data-chapter-title="变量" data-filepath="ch2/ch2-03.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2187,8 +2187,8 @@ fmt.Println(incr(&amp;v)) <span class="hljs-comment">// &quot;3&quot; (and v is 
 </code></pre>
 <p>&#x6BCF;&#x6B21;&#x6211;&#x4EEC;&#x5BF9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x53D6;&#x5730;&#x5740;&#xFF0C;&#x6216;&#x8005;&#x590D;&#x5236;&#x6307;&#x9488;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x4E3A;&#x539F;&#x53D8;&#x91CF;&#x521B;&#x5EFA;&#x4E86;&#x65B0;&#x7684;&#x522B;&#x540D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;<code>*p</code>&#x5C31;&#x662F;&#x662F; &#x53D8;&#x91CF;v&#x7684;&#x522B;&#x540D;&#x3002;&#x6307;&#x9488;&#x7279;&#x522B;&#x6709;&#x4EF7;&#x503C;&#x7684;&#x5730;&#x65B9;&#x5728;&#x4E8E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x540D;&#x5B57;&#x800C;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x662F;&#x4E00;&#x628A;&#x53CC;&#x5203;&#x5251;&#xFF1A;&#x8981;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x6240;&#x6709;&#x8BBF;&#x95EE;&#x8005;&#x5E76;&#x4E0D;&#x5BB9;&#x6613;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x53D8;&#x91CF;&#x5168;&#x90E8;&#x7684;&#x522B;&#x540D;&#xFF08;&#x8BD1;&#x6CE8;&#xFF1A;&#x8FD9;&#x662F;Go&#x8BED;&#x8A00;&#x7684;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x6240;&#x505A;&#x7684;&#x5DE5;&#x4F5C;&#xFF09;&#x3002;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x6307;&#x9488;&#x4F1A;&#x521B;&#x5EFA;&#x522B;&#x540D;&#xFF0C;&#x5F88;&#x591A;&#x5176;&#x4ED6;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x4E5F;&#x4F1A;&#x521B;&#x5EFA;&#x522B;&#x540D;&#xFF0C;&#x4F8B;&#x5982;slice&#x3001;map&#x548C;chan&#xFF0C;&#x751A;&#x81F3;&#x7ED3;&#x6784;&#x4F53;&#x3001;&#x6570;&#x7EC4;&#x548C;&#x63A5;&#x53E3;&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#x6240;&#x5F15;&#x7528;&#x53D8;&#x91CF;&#x7684;&#x522B;&#x540D;&#x3002;</p>
 <p>&#x6307;&#x9488;&#x662F;&#x5B9E;&#x73B0;&#x6807;&#x51C6;&#x5E93;&#x4E2D;flag&#x5305;&#x7684;&#x5173;&#x952E;&#x6280;&#x672F;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x6765;&#x8BBE;&#x7F6E;&#x5BF9;&#x5E94;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x5BF9;&#x5E94;&#x547D;&#x4EE4;&#x884C;&#x6807;&#x5FD7;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x4F1A;&#x96F6;&#x6563;&#x5206;&#x5E03;&#x5728;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x4E2D;&#x3002;&#x4E3A;&#x4E86;&#x8BF4;&#x660E;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x5728;&#x65E9;&#x4E9B;&#x7684;echo&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x5C31;&#x5305;&#x542B;&#x4E86;&#x4E24;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#xFF1A;<code>-n</code>&#x7528;&#x4E8E;&#x5FFD;&#x7565;&#x884C;&#x5C3E;&#x7684;&#x6362;&#x884C;&#x7B26;&#xFF0C;<code>-s sep</code>&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5206;&#x9694;&#x5B57;&#x7B26;&#xFF08;&#x9ED8;&#x8BA4;&#x662F;&#x7A7A;&#x683C;&#xFF09;&#x3002;&#x4E0B;&#x9762;&#x8FD9;&#x662F;&#x7B2C;&#x56DB;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x5BF9;&#x5E94;&#x5305;&#x8DEF;&#x5F84;&#x4E3A;gopl.io/ch2/echo4&#x3002;</p>
-<pre><code class="lang-Go">gopl.io/ch2/echo4
-<span class="hljs-comment">// Echo4 prints its command-line arguments.</span>
+<p><u><i>gopl.io/ch2/echo4</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-comment">// Echo4 prints its command-line arguments.</span>
 <span class="hljs-keyword">package</span> main
 
 <span class="hljs-keyword">import</span> (

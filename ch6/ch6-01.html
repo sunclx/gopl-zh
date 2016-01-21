@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="6.1" data-chapter-title="方法声明" data-filepath="ch6/ch6-01.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="6.1" data-chapter-title="方法声明" data-filepath="ch6/ch6-01.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2092,8 +2092,8 @@
                         <h2 id="61-&#x65B9;&#x6CD5;&#x58F0;&#x660E;">6.1. &#x65B9;&#x6CD5;&#x58F0;&#x660E;</h2>
 <p>&#x5728;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x65F6;&#xFF0C;&#x5728;&#x5176;&#x540D;&#x5B57;&#x4E4B;&#x524D;&#x653E;&#x4E0A;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5373;&#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;&#x9644;&#x52A0;&#x7684;&#x53C2;&#x6570;&#x4F1A;&#x5C06;&#x8BE5;&#x51FD;&#x6570;&#x9644;&#x52A0;&#x5230;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x4E0A;&#xFF0C;&#x5373;&#x76F8;&#x5F53;&#x4E8E;&#x4E3A;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x72EC;&#x5360;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x6765;&#x5199;&#x6211;&#x4EEC;&#x7B2C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5728;package geometry&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-go">gopl.io/ch6/geometry
-<span class="hljs-keyword">package</span> geometry
+<p><u><i>gopl.io/ch6/geometry</i></u></p>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> geometry
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">&quot;math&quot;</span>
 
@@ -2103,7 +2103,6 @@
 <span class="hljs-keyword">func</span> Distance(p, q Point) <span class="hljs-typename">float64</span> {
     <span class="hljs-keyword">return</span> math.Hypot(q.X-p.X, q.Y-p.Y)
 }
-
 
 <span class="hljs-comment">// same thing, but as a method of the Point type</span>
 <span class="hljs-keyword">func</span> (p Point) Distance(q Point) <span class="hljs-typename">float64</span> {

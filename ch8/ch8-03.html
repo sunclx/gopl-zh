@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="8.3" data-chapter-title="示例: 并发的Echo服务" data-filepath="ch8/ch8-03.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="8.3" data-chapter-title="示例: 并发的Echo服务" data-filepath="ch8/ch8-03.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2097,8 +2097,8 @@
 }
 </code></pre>
 <p>&#x4E00;&#x4E2A;&#x66F4;&#x6709;&#x610F;&#x601D;&#x7684;echo&#x670D;&#x52A1;&#x5E94;&#x8BE5;&#x6A21;&#x62DF;&#x4E00;&#x4E2A;&#x5B9E;&#x9645;&#x7684;echo&#x7684;&#x201C;&#x56DE;&#x54CD;&#x201D;&#xFF0C;&#x5E76;&#x4E14;&#x4E00;&#x5F00;&#x59CB;&#x8981;&#x7528;&#x5927;&#x5199;HELLO&#x6765;&#x8868;&#x793A;&#x201C;&#x58F0;&#x97F3;&#x5F88;&#x5927;&#x201D;&#xFF0C;&#x4E4B;&#x540E;&#x7ECF;&#x8FC7;&#x4E00;&#x5C0F;&#x6BB5;&#x5EF6;&#x8FDF;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6709;&#x6240;&#x7F13;&#x548C;&#x7684;Hello&#xFF0C;&#x7136;&#x540E;&#x4E00;&#x4E2A;&#x5168;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x7684;hello&#x8868;&#x793A;&#x58F0;&#x97F3;&#x6E10;&#x6E10;&#x53D8;&#x5C0F;&#x76F4;&#x81F3;&#x6D88;&#x5931;&#xFF0C;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x7684;handleConn(&#x8BD1;&#x6CE8;&#xFF1A;&#x7B11;&#x770B;&#x4F5C;&#x8005;&#x8111;&#x6D1E;&#x5927;&#x5F00;)&#xFF1A;</p>
-<pre><code class="lang-go">gopl.io/ch8/reverb1
-<span class="hljs-keyword">func</span> echo(c net.Conn, shout <span class="hljs-typename">string</span>, delay time.Duration) {
+<p><u><i>gopl.io/ch8/reverb1</i></u></p>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> echo(c net.Conn, shout <span class="hljs-typename">string</span>, delay time.Duration) {
     fmt.Fprintln(c, <span class="hljs-string">&quot;\t&quot;</span>, strings.ToUpper(shout))
     time.Sleep(delay)
     fmt.Fprintln(c, <span class="hljs-string">&quot;\t&quot;</span>, shout)
@@ -2116,8 +2116,8 @@
 }
 </code></pre>
 <p>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5347;&#x7EA7;&#x6211;&#x4EEC;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#xFF0C;&#x8FD9;&#x6837;&#x5B83;&#x5C31;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x7EC8;&#x7AEF;&#x7684;&#x8F93;&#x5165;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5E76;&#x628A;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x8FD4;&#x56DE;&#x8F93;&#x51FA;&#x5230;&#x7EC8;&#x7AEF;&#x4E0A;&#xFF0C;&#x8FD9;&#x4F7F;&#x6211;&#x4EEC;&#x6709;&#x4E86;&#x4F7F;&#x7528;&#x5E76;&#x53D1;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x597D;&#x673A;&#x4F1A;&#xFF1A;</p>
-<pre><code class="lang-go">gopl.io/ch8/netcat2
-<span class="hljs-keyword">func</span> main() {
+<p><u><i>gopl.io/ch8/netcat2</i></u></p>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> main() {
     conn, err := net.Dial(<span class="hljs-string">&quot;tcp&quot;</span>, <span class="hljs-string">&quot;localhost:8000&quot;</span>)
     <span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
         log.Fatal(err)
@@ -2149,8 +2149,8 @@ yooo-hooo!
 ^D
 $ killall reverb1
 </code></pre><p>&#x6CE8;&#x610F;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7B2C;&#x4E09;&#x6B21;shout&#x5728;&#x524D;&#x4E00;&#x4E2A;shout&#x5904;&#x7406;&#x5B8C;&#x6210;&#x4E4B;&#x524D;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x88AB;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x8C8C;&#x4F3C;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x662F;&#x7279;&#x522B;&#x201C;&#x73B0;&#x5B9E;&#x201D;&#x3002;&#x771F;&#x5B9E;&#x4E16;&#x754C;&#x91CC;&#x7684;&#x56DE;&#x54CD;&#x5E94;&#x8BE5;&#x662F;&#x4F1A;&#x7531;&#x4E09;&#x6B21;shout&#x7684;&#x56DE;&#x58F0;&#x7EC4;&#x5408;&#x800C;&#x6210;&#x7684;&#x3002;&#x4E3A;&#x4E86;&#x6A21;&#x62DF;&#x771F;&#x5B9E;&#x4E16;&#x754C;&#x7684;&#x56DE;&#x54CD;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;goroutine&#x6765;&#x505A;&#x8FD9;&#x4EF6;&#x4E8B;&#x60C5;&#x3002;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x518D;&#x4E00;&#x6B21;&#x5730;&#x9700;&#x8981;go&#x8FD9;&#x4E2A;&#x5173;&#x952E;&#x8BCD;&#x4E86;&#xFF0C;&#x8FD9;&#x6B21;&#x6211;&#x4EEC;&#x7528;&#x5B83;&#x6765;&#x8C03;&#x7528;echo&#xFF1A;</p>
-<pre><code class="lang-go">gopl.io/ch8/reverb2
-<span class="hljs-keyword">func</span> handleConn(c net.Conn) {
+<p><u><i>gopl.io/ch8/reverb2</i></u></p>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> handleConn(c net.Conn) {
     input := bufio.NewScanner(c)
     <span class="hljs-keyword">for</span> input.Scan() {
         <span class="hljs-keyword">go</span> echo(c, input.Text(), <span class="hljs-number">1</span>*time.Second)

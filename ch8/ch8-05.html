@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="8.5" data-chapter-title="并发的循环" data-filepath="ch8/ch8-05.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="8.5" data-chapter-title="并发的循环" data-filepath="ch8/ch8-05.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2091,16 +2091,17 @@
                     
                         <h2 id="85-&#x5E76;&#x53D1;&#x7684;&#x5FAA;&#x73AF;">8.5. &#x5E76;&#x53D1;&#x7684;&#x5FAA;&#x73AF;</h2>
 <p>&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x63A2;&#x7D22;&#x4E00;&#x4E9B;&#x7528;&#x6765;&#x5728;&#x5E76;&#x884C;&#x65F6;&#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x7684;&#x5E38;&#x89C1;&#x5E76;&#x53D1;&#x6A21;&#x578B;&#x3002;&#x6211;&#x4EEC;&#x4F1A;&#x63A2;&#x7A76;&#x4ECE;&#x5168;&#x5C3A;&#x5BF8;&#x56FE;&#x7247;&#x751F;&#x6210;&#x4E00;&#x4E9B;&#x7F29;&#x7565;&#x56FE;&#x7684;&#x95EE;&#x9898;&#x3002;gopl.io/ch8/thumbnail&#x5305;&#x63D0;&#x4F9B;&#x4E86;ImageFile&#x51FD;&#x6570;&#x6765;&#x5E2E;&#x6211;&#x4EEC;&#x62C9;&#x4F38;&#x56FE;&#x7247;&#x3002;&#x6211;&#x4EEC;&#x4E0D;&#x4F1A;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4ECE;gopl.io&#x4E0B;&#x8F7D;&#x5B83;&#x3002;</p>
-<pre><code class="lang-go">gopl.io/ch8/thumbnail
-<span class="hljs-keyword">package</span> thumbnail
+<p><u><i>gopl.io/ch8/thumbnail</i></u></p>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> thumbnail
+
 <span class="hljs-comment">// ImageFile reads an image from infile and writes</span>
 <span class="hljs-comment">// a thumbnail-size version of it in the same directory.</span>
 <span class="hljs-comment">// It returns the generated file name, e.g., &quot;foo.thumb.jpg&quot;.</span>
 <span class="hljs-keyword">func</span> ImageFile(infile <span class="hljs-typename">string</span>) (<span class="hljs-typename">string</span>, error)
 </code></pre>
 <p>&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4F1A;&#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x4E00;&#x4E9B;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x5E76;&#x4E3A;&#x6BCF;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7F29;&#x7565;&#x56FE;&#xFF1A;</p>
-<pre><code class="lang-go">gopl.io/ch8/thumbnail
-<span class="hljs-comment">// makeThumbnails makes thumbnails of the specified files.</span>
+<p><u><i>gopl.io/ch8/thumbnail</i></u></p>
+<pre><code class="lang-go"><span class="hljs-comment">// makeThumbnails makes thumbnails of the specified files.</span>
 <span class="hljs-keyword">func</span> makeThumbnails(filenames []<span class="hljs-typename">string</span>) {
     <span class="hljs-keyword">for</span> _, f := <span class="hljs-keyword">range</span> filenames {
         <span class="hljs-keyword">if</span> _, err := thumbnail.ImageFile(f); err != <span class="hljs-constant">nil</span> {
@@ -2172,7 +2173,6 @@
 <pre><code class="lang-go"><span class="hljs-comment">// makeThumbnails5 makes thumbnails for the specified files in parallel.</span>
 <span class="hljs-comment">// It returns the generated file names in an arbitrary order,</span>
 <span class="hljs-comment">// or an error if any step failed.</span>
-
 <span class="hljs-keyword">func</span> makeThumbnails5(filenames []<span class="hljs-typename">string</span>) (thumbfiles []<span class="hljs-typename">string</span>, err error) {
     <span class="hljs-keyword">type</span> item <span class="hljs-keyword">struct</span> {
         thumbfile <span class="hljs-typename">string</span>
@@ -2226,7 +2226,6 @@
         wg.Wait()
         <span class="hljs-built_in">close</span>(sizes)
     }()
-
 
     <span class="hljs-keyword">var</span> total <span class="hljs-typename">int64</span>
     <span class="hljs-keyword">for</span> size := <span class="hljs-keyword">range</span> sizes {

@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="6.2" data-chapter-title="基于指针对象的方法" data-filepath="ch6/ch6-02.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="6.2" data-chapter-title="基于指针对象的方法" data-filepath="ch6/ch6-02.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2163,18 +2163,18 @@ pptr.ScaleBy(<span class="hljs-number">2</span>)         <span class="hljs-comme
 </code></pre>
 <p>&#x5F53;&#x4F60;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5141;&#x8BB8;nil&#x4F5C;&#x4E3A;&#x63A5;&#x6536;&#x5668;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x5728;&#x7C7B;&#x578B;&#x524D;&#x9762;&#x7684;&#x6CE8;&#x91CA;&#x4E2D;&#x6307;&#x51FA;nil&#x53D8;&#x91CF;&#x4EE3;&#x8868;&#x7684;&#x610F;&#x4E49;&#x662F;&#x5F88;&#x6709;&#x5FC5;&#x8981;&#x7684;&#xFF0C;&#x5C31;&#x50CF;&#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x91CC;&#x505A;&#x7684;&#x8FD9;&#x6837;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x662F;net/url&#x5305;&#x91CC;Values&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
-<pre><code class="lang-go">net/url
-<span class="hljs-keyword">package</span> url
+<p><u><i>net/url</i></u></p>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> url
 
 <span class="hljs-comment">// Values maps a string key to a list of values.</span>
 <span class="hljs-keyword">type</span> Values <span class="hljs-keyword">map</span>[<span class="hljs-typename">string</span>][]<span class="hljs-typename">string</span>
 <span class="hljs-comment">// Get returns the first value associated with the given key,</span>
 <span class="hljs-comment">// or &quot;&quot; if there are none.</span>
 <span class="hljs-keyword">func</span> (v Values) Get(key <span class="hljs-typename">string</span>) <span class="hljs-typename">string</span> {
-     <span class="hljs-keyword">if</span> vs := v[key]; <span class="hljs-built_in">len</span>(vs) &gt; <span class="hljs-number">0</span> {
-         <span class="hljs-keyword">return</span> vs[<span class="hljs-number">0</span>]
-     }
-     <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>
+    <span class="hljs-keyword">if</span> vs := v[key]; <span class="hljs-built_in">len</span>(vs) &gt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span> vs[<span class="hljs-number">0</span>]
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>
 }
 <span class="hljs-comment">// Add adds the value to key.</span>
 <span class="hljs-comment">// It appends to any existing values associated with key.</span>
@@ -2183,8 +2183,8 @@ pptr.ScaleBy(<span class="hljs-number">2</span>)         <span class="hljs-comme
 }
 </code></pre>
 <p>&#x8FD9;&#x4E2A;&#x5B9A;&#x4E49;&#x5411;&#x5916;&#x90E8;&#x66B4;&#x9732;&#x4E86;&#x4E00;&#x4E2A;map&#x7684;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x80FD;&#x591F;&#x7B80;&#x5355;&#x64CD;&#x4F5C;&#x8FD9;&#x4E2A;map&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;map&#x7684;value&#x5B57;&#x6BB5;&#x662F;&#x4E00;&#x4E2A;string&#x7684;slice&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;Values&#x662F;&#x4E00;&#x4E2A;&#x591A;&#x7EF4;map&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;map&#x56FA;&#x6709;&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;(make&#xFF0C;&#x5207;&#x7247;&#xFF0C;m[key]&#x7B49;&#x7B49;)&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x7684;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#xFF0C;&#x6216;&#x8005;&#x4E24;&#x8005;&#x5E76;&#x7528;&#xFF0C;&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF1A;</p>
-<pre><code class="lang-go">gopl.io/ch6/urlvalues
-m := url.Values{<span class="hljs-string">&quot;lang&quot;</span>: {<span class="hljs-string">&quot;en&quot;</span>}} <span class="hljs-comment">// direct construction</span>
+<p><u><i>gopl.io/ch6/urlvalues</i></u></p>
+<pre><code class="lang-go">m := url.Values{<span class="hljs-string">&quot;lang&quot;</span>: {<span class="hljs-string">&quot;en&quot;</span>}} <span class="hljs-comment">// direct construction</span>
 m.Add(<span class="hljs-string">&quot;item&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>)
 m.Add(<span class="hljs-string">&quot;item&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>)
 

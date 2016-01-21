@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="10.7" data-chapter-title="工具" data-filepath="ch10/ch10-07.md" data-basepath=".." data-revision="Mon Jan 18 2016 17:52:50 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="10.7" data-chapter-title="工具" data-filepath="ch10/ch10-07.md" data-basepath=".." data-revision="Thu Jan 21 2016 10:56:05 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -2208,9 +2208,8 @@ $ ./quoteargs one &quot;two three&quot; four\ five
 <p><code>go install</code>&#x547D;&#x4EE4;&#x548C;<code>go build</code>&#x547D;&#x4EE4;&#x5F88;&#x76F8;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4F1A;&#x4FDD;&#x5B58;&#x6BCF;&#x4E2A;&#x5305;&#x7684;&#x7F16;&#x8BD1;&#x6210;&#x679C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C06;&#x5B83;&#x4EEC;&#x90FD;&#x4E22;&#x5F03;&#x3002;&#x88AB;&#x7F16;&#x8BD1;&#x7684;&#x5305;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x5230;$GOPATH/pkg&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#x548C; src&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#x5BF9;&#x5E94;&#xFF0C;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x88AB;&#x4FDD;&#x5B58;&#x5230;$GOPATH/bin&#x76EE;&#x5F55;&#x3002;&#xFF08;&#x5F88;&#x591A;&#x7528;&#x6237;&#x4F1A;&#x5C06;$GOPATH/bin&#x6DFB;&#x52A0;&#x5230;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x7684;&#x641C;&#x7D22;&#x5217;&#x8868;&#x4E2D;&#x3002;&#xFF09;&#x8FD8;&#x6709;&#xFF0C;<code>go install</code>&#x547D;&#x4EE4;&#x548C;<code>go build</code>&#x547D;&#x4EE4;&#x90FD;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x5305;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x4F7F;&#x540E;&#x7EED;&#x6784;&#x5EFA;&#x66F4;&#x5FEB;&#x6377;&#x3002;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x7F16;&#x8BD1;&#x4F9D;&#x8D56;&#x7684;&#x5305;&#xFF0C;<code>go build -i</code>&#x547D;&#x4EE4;&#x5C06;&#x5B89;&#x88C5;&#x6BCF;&#x4E2A;&#x76EE;&#x6807;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x5305;&#x3002;</p>
 <p>&#x56E0;&#x4E3A;&#x7F16;&#x8BD1;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5E73;&#x53F0;&#x548C;CPU&#x67B6;&#x6784;&#xFF0C;<code>go install</code>&#x547D;&#x4EE4;&#x4F1A;&#x5C06;&#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#x5B89;&#x88C5;&#x5230;GOOS&#x548C;GOARCH&#x5BF9;&#x5E94;&#x7684;&#x76EE;&#x5F55;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;Mac&#x7CFB;&#x7EDF;&#xFF0C;golang.org/x/net/html&#x5305;&#x5C06;&#x88AB;&#x5B89;&#x88C5;&#x5230;$GOPATH/pkg/darwin_amd64&#x76EE;&#x5F55;&#x4E0B;&#x7684;golang.org/x/net/html.a&#x6587;&#x4EF6;&#x3002;</p>
 <p>&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x6216;CPU&#x7684;&#x4EA4;&#x53C9;&#x6784;&#x5EFA;&#x4E5F;&#x662F;&#x5F88;&#x7B80;&#x5355;&#x7684;&#x3002;&#x53EA;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x597D;&#x76EE;&#x6807;&#x5BF9;&#x5E94;&#x7684;GOOS&#x548C;GOARCH&#xFF0C;&#x7136;&#x540E;&#x8FD0;&#x884C;&#x6784;&#x5EFA;&#x547D;&#x4EE4;&#x5373;&#x53EF;&#x3002;&#x4E0B;&#x9762;&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x7684;&#x7A0B;&#x5E8F;&#x5C06;&#x8F93;&#x51FA;&#x5B83;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;CPU&#x7C7B;&#x578B;&#xFF1A;</p>
-<pre><code class="lang-Go">gopl.io/ch10/cross
-
-<span class="hljs-keyword">func</span> main() {
+<p><u><i>gopl.io/ch10/cross</i></u></p>
+<pre><code class="lang-Go"><span class="hljs-keyword">func</span> main() {
     fmt.Println(runtime.GOOS, runtime.GOARCH)
 }
 </code></pre>
