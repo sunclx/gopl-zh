@@ -26,8 +26,10 @@ cover_patch.png
 zh2tw.go
 fixlinks.go
 mkqrcode.go
+update_version.go
 Makefile
 make.bat
+version.md
 SUMMARY-github.md
 search_index.json
 
